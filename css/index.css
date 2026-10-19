@@ -1,0 +1,21 @@
+/* escolher fonte
+centralizar objetos
+estilizar as divs
+*/
+
+.options {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 250px;
+    box-sizing: border-box;
+}
+
+button {
+    margin: 10px auto;
+    width: 250px;
+    height: 30px;
+}
