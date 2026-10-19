@@ -1,7 +1,6 @@
-
 async function carregarDatas() {
     // variavel de leitura do json e atribuição a ele na const "datas"
-    const datasJson = await fetch("data/datas.json");
+    const datasJson = await fetch("dados/datas.json");
     const datas = await datasJson.json();
 
     // variavel do listbox das datas no formulário
@@ -19,8 +18,50 @@ async function carregarDatas() {
 
 carregarDatas();
 
-const agendamentoNome = document.getElementById("agendamentoNome").value;
+const form = document.getElementById("form");
+// array dos campos do formulário que são identificados por indices (Ex: Nome = primeiro campo na pagina = 0)
+const campos = document.querySelectorAll(".required");
+// mesma lógica dos campos, com exatamente o mesmo indice pro mesmo campo 
+const spans = document.querySelectorAll(".span-required");
+const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
-agendamentoNome.addEventListener("input", function() {
-    document.getElementById("teste").innerHTML = agendamentoNome.value;
-});
+// funções para retornar erro ou pass na validação
+function setError(indexCampo) {
+    campos[indexCampo].style.border = "1px solid #e63636";
+    spans[indexCampo].style.display = "block";
+}
+
+function setPass(indexCampo) {
+    campos[indexCampo].style.border = "";
+    spans[indexCampo].style.display = "none";
+}
+
+// funções de validação
+function validarNome(){
+    // campo[0] = agendamentoNome
+    if(campos[0].value.length < 3) {
+        setError(0);
+    }
+    else {
+        setPass(0);
+    }
+}
+
+function validarTelefone() {
+    if(campos[1].value.length < 11) {
+        setError(1)
+    }
+    else {
+        setPass(1)
+    }
+}
+
+function validarEmail() {
+    if(!emailRegex.test.value(campos[1].value)) {
+        setError(1);
+    }
+    else {
+        setPass(1);
+    }
+}
+
