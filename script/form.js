@@ -18,3 +18,9 @@ async function carregarDatas() {
 }
 
 carregarDatas();
+
+const agendamentoNome = document.getElementById("agendamentoNome").value;
+
+agendamentoNome.addEventListener("input", function() {
+    document.getElementById("teste").innerHTML = agendamentoNome.value;
+});
