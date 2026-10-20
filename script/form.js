@@ -102,30 +102,52 @@ const spansNull = document.querySelectorAll(".span-required-null");
 const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
 // evento que valida os campos preenchidos ao clicar em "agendar"
-form.addEventListener('submit', (event) => {
+form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    // loop que verifica se os campos estão vazios, e estiverem retorna apenas o erro de campo vazio, se nao remove o erro e valida se foram preenchidos corretamente
-    for(let i = 0; i < campos.length; i++) {
-        if(campos[i].value.trim() === "") {
-            validarCampoVazio(i)
-            setPass(i)
-        }
-        else {
-            removeSpanNull(i)
+    let formularioValido = true;
 
-            if(i === 0) {
+    for (let i = 0; i < campos.length; i++) {
+        if (campos[i].value.trim() === "") {
+            setPass(i);
+            validarCampoVazio(i);
+            formularioValido = false;
+        } else {
+            removeSpanNull(i);
+
+            if (i === 0) {
                 validarNome();
-            } 
-            else if(i === 1) {
-                validarTelefone();
-            }
-            else if(i === 2) {
+                if (campos[i].value.trim().length < 3) formularioValido = false;
+            } else if (i === 1) {
+                if (!validarTelefone()) formularioValido = false;
+            } else if (i === 2) {
                 validarEmail();
+                if (!emailRegex.test(campos[i].value)) formularioValido = false;
             }
         }
     }
 
+    // validaçãp no console do form 
+    console.log("Formulário válido:", formularioValido);
+
+    // define se para a validação ou nao
+    if (!formularioValido) {
+        return;
+    }
+
+    // coloca os dados dos campos dentro dessa const dados para que o método get possa utilizar ele
+    const dados = new URLSearchParams();
+
+    dados.append("nome", campos[0].value);
+    dados.append("telefone", campos[1].value.replace(/\D/g, ""));
+    dados.append("email", campos[2].value);
+    dados.append("servico", document.querySelector('input[name="servico"]:checked')?.value || "");
+    dados.append("barbeiroNome", document.getElementById("agendamentoBarbeiro").value);
+    dados.append("data", document.getElementById("agendamentoData").value);
+    dados.append("horario", document.getElementById("agendamentoHorario").value);
+
+    // redirecionamento da página
+    window.location.href = "formAction.html?" + dados.toString();
 });
 
 // funções para retornar erro ou pass na validação
@@ -180,12 +202,15 @@ function validarNome(){
 }
 
 function validarTelefone() {
-     // campo[1] = agendamentoTelefone
-    tratarCampoTelefone(1)
-    if (!/^\d{11}$/.test(campos[1].value.trim())) {
+    // remove os caracteres da máscara só pra validar
+    const telefone = campos[1].value.replace(/\D/g, "");
+
+    if (!/^\d{11}$/.test(telefone)) {
         setError(1);
+        return false;
     } else {
         setPass(1);
+        return true;
     }
 }
 
