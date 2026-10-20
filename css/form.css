@@ -1,4 +1,5 @@
-.span-required {
+.span-required,
+.span-required-null {
     display: none;
     font-size: 12px;
     margin: 3px 0 0 1px;
