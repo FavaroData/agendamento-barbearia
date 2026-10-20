@@ -12,3 +12,22 @@ document.getElementById("menu").innerHTML = `
     </nav>
     <div class="listra"></div>
 `;
+
+/* Descobrir página atual pelo final do endereço*/
+let paginaAtual = location.pathname.split("/").pop();
+
+/* Se o endereço termina em "/", o navegador está mostrando o index*/
+if (paginaAtual === "") {
+    paginaAtual= "indexhtml";
+}
+
+/* Pegar todos os links do menu*/
+
+const links = document.querySelectorAll(".menu ul a");
+
+/* Para cada link, comparar o href com a página atual */
+links.forEach(function (link) {
+    if (link.getAttribute("href") === paginaAtual) {
+        link.classList.add("active");
+    }
+});
