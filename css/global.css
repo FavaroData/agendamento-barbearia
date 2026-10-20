@@ -96,3 +96,20 @@ h2 {
     color: var(--latao);
     border-bottom: 2px solid var(--latao);
 }
+
+/*Botão reutilizavel em todas as páginas*/
+.btn {
+    background-color: var(--latao);
+    color:var(--couro);
+    text-decoration: none;
+    font-family: var(--fonte-titulo);
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/*Botão reutilizavel com efeito*/
+.btn:hover{
+    background:#dbb560;
+}
