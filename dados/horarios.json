@@ -1,0 +1,97 @@
+
+[
+    {
+        "data": "2026-10-20",
+        "disponivel": false,
+        "horarios": []
+    },
+    {
+        "data": "2026-10-21",
+        "disponivel": true,
+        "horarios": [
+            {"hora": "09:00", "disponivel": true},
+            {"hora": "10:00", "disponivel": true},
+            {"hora": "11:00", "disponivel": false},
+            {"hora": "13:00", "disponivel": true},
+            {"hora": "14:00", "disponivel": true},
+            {"hora": "15:00", "disponivel": false},
+            {"hora": "16:00", "disponivel": true},
+            {"hora": "17:00", "disponivel": true}
+        ]
+    },
+    {
+        "data": "2026-10-22",
+        "disponivel": true,
+        "horarios": [
+            {"hora": "09:00", "disponivel": true},
+            {"hora": "10:00", "disponivel": false},
+            {"hora": "11:00", "disponivel": true},
+            {"hora": "13:00", "disponivel": true},
+            {"hora": "14:00", "disponivel": false},
+            {"hora": "15:00", "disponivel": true},
+            {"hora": "16:00", "disponivel": true},
+            {"hora": "17:00", "disponivel": false}
+        ]
+    },
+    {
+        "data": "2026-10-23",
+        "disponivel": true,
+        "horarios": [
+            {"hora": "09:00", "disponivel": true},
+            {"hora": "10:00", "disponivel": true},
+            {"hora": "11:00", "disponivel": true},
+            {"hora": "13:00", "disponivel": false},
+            {"hora": "14:00", "disponivel": true},
+            {"hora": "15:00", "disponivel": true},
+            {"hora": "16:00", "disponivel": false},
+            {"hora": "17:00", "disponivel": true}
+        ]
+    },
+    {
+        "data": "2026-10-24",
+        "disponivel": true,
+        "horarios": [
+            {"hora": "09:00", "disponivel": true},
+            {"hora": "10:00", "disponivel": false},
+            {"hora": "11:00", "disponivel": true},
+            {"hora": "13:00", "disponivel": true},
+            {"hora": "14:00", "disponivel": true},
+            {"hora": "15:00", "disponivel": false},
+            {"hora": "16:00", "disponivel": true},
+            {"hora": "17:00", "disponivel": true}
+        ]
+    },
+    {
+        "data": "2026-10-25",
+        "disponivel": false,
+        "horarios": []
+    },
+    {
+        "data": "2026-10-26",
+        "disponivel": true,
+        "horarios": [
+            {"hora": "09:00", "disponivel": true},
+            {"hora": "10:00", "disponivel": true},
+            {"hora": "11:00", "disponivel": false},
+            {"hora": "13:00", "disponivel": true},
+            {"hora": "14:00", "disponivel": false},
+            {"hora": "15:00", "disponivel": true},
+            {"hora": "16:00", "disponivel": true},
+            {"hora": "17:00", "disponivel": true}
+        ]
+    },
+    {
+        "data": "2026-10-27",
+        "disponivel": true,
+        "horarios": [
+            {"hora": "09:00", "disponivel": false},
+            {"hora": "10:00", "disponivel": true},
+            {"hora": "11:00", "disponivel": true},
+            {"hora": "13:00", "disponivel": true},
+            {"hora": "14:00", "disponivel": true},
+            {"hora": "15:00", "disponivel": true},
+            {"hora": "16:00", "disponivel": false},
+            {"hora": "17:00", "disponivel": true}
+        ]
+    }
+]
