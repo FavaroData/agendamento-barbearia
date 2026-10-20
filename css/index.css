@@ -9,7 +9,7 @@
     padding-bottom: var(--esp-g);
 }
 
-/* ===== Poste de barbearia ===== */
+/* $$$ Poste $$$*/
 
 /* Empilha as peças do poste, centralizadas */
 .poste {
@@ -47,7 +47,7 @@
     animation: girar 5s linear infinite;
 }
 
-/* ===== Serviços e horários ===== */
+/* $$$$ Serviços e horários $$$$ */
 
 /* As duas seções lado a lado */
 .colunas {

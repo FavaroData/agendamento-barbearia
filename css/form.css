@@ -1,7 +1,80 @@
+/* Estilos exclusivos da página do formulário */
+/* O HTML é do Lucas: este arquivo estiliza a estrutura dele, sem mudá-la */
+
+/* Área do formulário: largura confortável e centralizada */
+.agendamento {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: var(--esp-g) var(--esp-m);
+}
+
+/* Rótulos de cada campo */
+.agendamento p {
+    font-family: var(--fonte-titulo);
+    margin: var(--esp-m) 0 6px 0;
+}
+
+/* Campos de texto, listas e observações */
+.agendamento .input,
+.agendamento textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    background-color: var(--couro-claro);
+    color: var(--osso);
+    border: 1px solid var(--osso-suave);
+    border-radius: 4px;
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+}
+
+/* Texto de exemplo dentro dos campos */
+.agendamento .input::placeholder,
+.agendamento textarea::placeholder {
+    color: var(--osso-suave);
+}
+
+/* Campo em uso com borda estilizada */
+.agendamento .input:focus,
+.agendamento textarea:focus {
+    outline: none;
+    border-color: var(--latao);
+}
+
+/* Opções de serviço */
+.agendamento input[type="radio"] {
+    accent-color: var(--latao);
+}
+
+.agendamento input[type="radio"] + label {
+    margin-right: var(--esp-m);
+    cursor: pointer;
+}
+
+/* Mensagens de erro */
 .span-required,
 .span-required-null {
     display: none;
-    font-size: 12px;
-    margin: 3px 0 0 1px;
-    color: #e63636
+    color: #e88a8a;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+/* Botão de enviar mesmo visual do .btn */
+.agendamento button {
+    margin-top: var(--esp-g);
+    background-color: var(--latao);
+    color: var(--couro);
+    font-family: var(--fonte-titulo);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.agendamento button:hover {
+    background-color: #dbb560;
 }
