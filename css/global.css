@@ -2,7 +2,7 @@
 /* Pedi para a LM da Antrophic modelo Opus 5.5 criar um estilo visual para barbearia para usar como referência*/
 
 /* Descobri a existência dessa funcionalidade em um reels do Instagram*/
-/*Root para reutilização mais prática das cores*/
+/*Root para reutilização mais prática das cores e espaçamentos de margem*/
 :root {
     --couro: #2a1a12;        
     --couro-claro: #3b2619;  
@@ -18,14 +18,26 @@
 
     --esp-p: 8px;
     --esp-m: 16px;
-    --esp-g: 40px;
+    --esp-g: 35;
 }
 
+/*Corpo do texto*/
 body {
     background-color: var(--couro);
     color: var(--osso);
     font-family: var(--fonte-texto);
     line-height: 1.8;
     margin: 0;
+}
+
+/*Títulos*/
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    line-height: 1.0;
+    margin: 0 0 var(--esp-m) 0;
+}
+
+h2 {
+    color: var(--latao);
 }
 
