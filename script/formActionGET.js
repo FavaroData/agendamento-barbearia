@@ -8,10 +8,16 @@ const barbeiroNome = parametros.get("barbeiroNome");
 const data = parametros.get("data");
 const horario = parametros.get("horario");
 
-document.getElementById("nome").textContent = nome;
-document.getElementById("telefone").textContent = telefone;
-document.getElementById("email").textContent = email;
-document.getElementById("servico").textContent = servico;
-document.getElementById("barbeiroNome").textContent = barbeiroNome;
-document.getElementById("data").textContent = data;
-document.getElementById("horario").textContent = horario;
+if (!nome) {
+    document.getElementById("titulo").textContent = "Nenhum agendamento realizado"
+    document.getElementById("comprovante").hidden = true;
+} else { 
+    document.getElementById("nomeCliente").textContent = nome;
+    document.getElementById("telefone").textContent = telefone;
+    document.getElementById("email").textContent = email;
+    document.getElementById("tipoServico").textContent = servico;
+    document.getElementById("nomeBarbeiro").textContent = barbeiroNome;
+    document.getElementById("data").textContent = data;
+    document.getElementById("horario").textContent = horario;
+
+}
