@@ -1,1 +1,31 @@
-/* Pensei da gente fazer um css que mostra a aba ativa com classe active, mouse em cima e inativa pro menu */
+/* Arquivo .css para características presentes em todas páginas. Ex: Menu*/
+/* Pedi para a LM da Antrophic modelo Opus 5.5 criar um estilo visual para barbearia para usar como referência*/
+
+/* Descobri a existência dessa funcionalidade em um reels do Instagram*/
+/*Root para reutilização mais prática das cores*/
+:root {
+    --couro: #2a1a12;        
+    --couro-claro: #3b2619;  
+    --latao: #c9a24a;        
+    --osso: #efe6d6;         
+    --osso-suave: #b9ab95;   
+    --sangue: #9b2c2c;       
+    --aco: #3c5a78;          
+    --verde: #7fb08a;        
+
+    --fonte-titulo: Bahnschrift, 'DIN Alternate', 'Arial Narrow', sans-serif;
+    --fonte-texto: Georgia, 'Times New Roman', serif;
+
+    --esp-p: 8px;
+    --esp-m: 16px;
+    --esp-g: 40px;
+}
+
+body {
+    background-color: var(--couro);
+    color: var(--osso);
+    font-family: var(--fonte-texto);
+    line-height: 1.8;
+    margin: 0;
+}
+
