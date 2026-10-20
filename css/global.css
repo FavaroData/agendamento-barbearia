@@ -18,7 +18,7 @@
 
     --esp-p: 8px;
     --esp-m: 16px;
-    --esp-g: 35;
+    --esp-g: 35px;
 }
 
 /*Corpo do texto*/
@@ -37,7 +37,62 @@ h1, h2, h3 {
     margin: 0 0 var(--esp-m) 0;
 }
 
+/*Para mudar a cor somente do h2(capricho hehe)*/
 h2 {
     color: var(--latao);
 }
 
+/*Menu*/
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+/*Links*/
+.menu ul a {
+    text-decoration: none;
+    color: var(--osso-suave);
+    padding: var(--esp-p) var(--esp-m);
+    display: block;
+    font-family: var(--fonte-titulo);
+    border-bottom: 2px solid transparent;
+}
+
+/*hover para dar um efeito visual*/
+.menu ul a:hover{
+    color: var(--osso);
+}
+
+/* Nome a esquerda e os links à direita*/
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Nome da barbearia*/
+.marca {
+    font-family: var(--fonte-titulo);
+    color: var(--osso);
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+/*Listra inspirada no icônico barber pole*/
+.listra {
+    height: var(--esp-p);
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--sangue) 0 10px,
+        var(--osso) 10px 20px,
+        var(--aco) 20px 30px,
+        var(--osso) 30px 40px
+    );
+}
+/* Link da página atual */
+    .menu ul a.active {
+    color: var(--latao);
+    border-bottom: 2px solid var(--latao);
+}
