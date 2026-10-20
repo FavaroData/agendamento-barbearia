@@ -6,7 +6,7 @@ async function carregarDatas() {
     // variavel do listbox das datas no formulário
     const listaDatas = document.getElementById("agendamentoData");
 
-    // logica principal de leitura onde: se disponivel = true, então ele exibe no listbox, caso contrário não mostra
+    // logica principal de leitura 
     for(let i = 0; i < datas.length; i++) {
         if (datas[i].disponivel == true) {
             listaDatas.innerHTML +=

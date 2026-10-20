@@ -1,0 +1,20 @@
+<!-- Ações do comprovante -->
+<div class="acoes">
+    <button type="button" class="btn" id="imprimir">Imprimir comprovante</button>
+    <a href="form.html" class="btn">Novo agendamento</a>
+</div>
+
+/* Botões lado a lado, abaixo do tíquete */
+.acoes {
+    display: flex;
+    gap: var(--esp-m);
+    margin-top: var(--esp-g);
+}
+
+/* Na impressão só o tíquete aparece */
+@media print {
+    #menu,
+    .acoes {
+        display: none;
+    }
+}

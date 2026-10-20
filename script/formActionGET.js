@@ -21,3 +21,8 @@ if (!nome) {
     document.getElementById("horario").textContent = horario;
 
 }
+
+// Botão de imprimir que abre a janela de impressão do nav
+document.getElementById("imprimir").addEventListener("click", function () {
+    window.print();
+});

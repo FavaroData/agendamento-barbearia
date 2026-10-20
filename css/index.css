@@ -1,8 +1,3 @@
-/* escolher fonte
-centralizar objetos
-estilizar as divs
-*/
-
 /* Estilos exclusivos da página inicial */
 
 /* Abertura: texto à esquerda, poste à direita */
@@ -11,35 +6,10 @@ estilizar as divs
     justify-content: space-between;
     align-items: center;
     gap: var(--esp-g);
+    padding-bottom: var(--esp-g);
 }
 
-/* Vidro listrado do poste */
-.vidro {
-    width: 72px;
-    height: 300px;
-    background-size: 101.82px 101.82px;
-    background: repeating-linear-gradient(
-        -45deg,
-        var(--sangue) 0 18px,
-        var(--osso) 18px 36px,
-        var(--aco) 36px 54px,
-        var(--osso) 54px 72px
-    );
-    animation: girar 5s linear infinite;
-}
-
-.tampa {
-    width: 92px;
-    height: 22px;
-    background: linear-gradient(180deg, #e2c574, var(--latao) 50%, #8f7230);
-    border-radius: 6px;
-}
-
-/* A tampa de cima é mais alta e arredondada */
-.tampa.topo {
-    height: 34px;
-    border-radius: 46px 46px 6px 6px;
-}
+/* ===== Poste de barbearia ===== */
 
 /* Empilha as peças do poste, centralizadas */
 .poste {
@@ -48,7 +18,109 @@ estilizar as divs
     align-items: center;
 }
 
+/* Tampas douradas */
+.tampa {
+    width: 92px;
+    height: 22px;
+    background: linear-gradient(180deg, #e2c574, var(--latao) 50%, #8f7230);
+    border-radius: 6px;
+}
+
+/* A tampa de cima é mais alta e arredondada, como uma cúpula */
+.tampa.topo {
+    height: 34px;
+    border-radius: 46px 46px 6px 6px;
+}
+
+/* Vidro listrado, com as listras girando */
+.vidro {
+    width: 72px;
+    height: 300px;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--sangue) 0 18px,
+        var(--osso) 18px 36px,
+        var(--aco) 36px 54px,
+        var(--osso) 54px 72px
+    );
+    background-size: 101.82px 101.82px;
+    animation: girar 5s linear infinite;
+}
+
+/* ===== Serviços e horários ===== */
+
+/* As duas seções lado a lado */
+.colunas {
+    display: flex;
+    gap: var(--esp-g);
+    border-top: 1px solid var(--couro-claro);
+    padding-top: var(--esp-g);
+}
+
+/* Os serviços ocupam mais espaço que os horários */
+.servicos {
+    flex: 3;
+}
+
+.horarios {
+    flex: 2;
+}
+
+/* Tabela de preços, no estilo das placas de barbearia */
+.precos {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada serviço: nome, pontilhado e preço na mesma linha */
+.precos li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--esp-p);
+    padding: 10px 0;
+}
+
+/* Ocupa todo o espaço entre o nome e o preço */
+.pontilhado {
+    flex: 1;
+    border-bottom: 2px dotted var(--osso-suave);
+}
+
+/* O preço em destaque */
+.preco {
+    font-family: var(--fonte-titulo);
+    color: var(--latao);
+    font-size: 1.15rem;
+}
+
+/* A descrição embaixo do nome do serviço */
+.precos small {
+    display: block;
+    color: var(--osso-suave);
+    font-size: 0.9rem;
+}
+
+/* Desliza o fundo um azulejo inteiro para baixo */
 @keyframes girar {
     from { background-position: 0 0; }
     to   { background-position: 0 101.82px; }
+}
+
+/* Para quem desativa animações no sistema, o poste fica parado */
+@media (prefers-reduced-motion: reduce) {
+    .vidro {
+        animation: none;
+    }
+}
+
+/* Em telas estreitas, tudo empilhado e sem o poste */
+@media (max-width: 700px) {
+    .colunas {
+        flex-direction: column;
+    }
+
+    .poste {
+        display: none;
+    }
 }
