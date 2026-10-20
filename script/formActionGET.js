@@ -7,6 +7,7 @@ const servico = parametros.get("servico");
 const barbeiroNome = parametros.get("barbeiroNome");
 const data = parametros.get("data");
 const horario = parametros.get("horario");
+const observacoes = parametros.get("observacoes")
 
 if (!nome) {
     document.getElementById("titulo").textContent = "Nenhum agendamento realizado"
@@ -19,5 +20,5 @@ if (!nome) {
     document.getElementById("nomeBarbeiro").textContent = barbeiroNome;
     document.getElementById("data").textContent = data;
     document.getElementById("horario").textContent = horario;
-
+    document.getElementById("observacoes").textContent = observacoes;
 }
