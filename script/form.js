@@ -53,11 +53,43 @@ async function carregarBarbeiros() {
     }
 }
 
+// execucao das async
 carregarBarbeiros();
 carregarDatas();
 carregarHorarios();
 // evento pra atualizar os horarios disponiveis de acordo com a data selecionada
 document.getElementById("agendamentoData").addEventListener("change", carregarHorarios);
+
+// funcao de mascara no campo telefone onde coloca o formato como (xx) xxxxx-xxxx
+function mascaraTelefone(event) {
+    let telefone = event.target.value.replace(/\D/g, "");
+
+    if (telefone.length > 11) {
+        telefone = telefone.substring(0, 11);
+    }
+
+    if (telefone.length > 7) {
+        telefone = telefone.replace(
+            /^(\d{2})(\d{5})(\d{0,4})$/,
+            "($1) $2-$3"
+        );
+    } else if (telefone.length > 2) {
+        telefone = telefone.replace(
+            /^(\d{2})(\d{0,5})$/,
+            "($1) $2"
+        );
+    } else if (telefone.length > 0) {
+        telefone = telefone.replace(
+            /^(\d{0,2})$/,
+            "($1"
+        );
+    }
+
+    event.target.value = telefone;
+}
+// evento para executar a funcao em tempo real
+document.getElementById('agendamentoTelefone').addEventListener('input', mascaraTelefone);
+        
 
 // variaveis principais do formulario
 const form = document.getElementById("agendamentoForm");
@@ -69,9 +101,11 @@ const spansNull = document.querySelectorAll(".span-required-null");
 
 const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
+// evento que valida os campos preenchidos ao clicar em "agendar"
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
+    // loop que verifica se os campos estão vazios, e estiverem retorna apenas o erro de campo vazio, se nao remove o erro e valida se foram preenchidos corretamente
     for(let i = 0; i < campos.length; i++) {
         if(campos[i].value.trim() === "") {
             validarCampoVazio(i)
@@ -125,6 +159,14 @@ function validarCampoVazio(indexCampo) {
     }
 }
 
+// remover caracteres invalidos do proprio campo id=agendamentoTelefone 
+function tratarCampoTelefone(indexCampo) {
+    let telefone = campos[indexCampo].value;
+
+    telefone = telefone.replace(/\D/g, "");
+
+    campos[indexCampo].value = telefone;
+}
 
 // funções de validação
 function validarNome(){
@@ -139,6 +181,7 @@ function validarNome(){
 
 function validarTelefone() {
      // campo[1] = agendamentoTelefone
+    tratarCampoTelefone(1)
     if (!/^\d{11}$/.test(campos[1].value.trim())) {
         setError(1);
     } else {

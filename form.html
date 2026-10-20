@@ -14,17 +14,17 @@
     <div id="agendamento" class="agendamento">
         <form id="agendamentoForm" action="">
             <p>Nome Completo</p>
-            <input type="text" name="nome" id="agendamentoNome" class="input required" oninput="validarNome()">
+            <input type="text" name="nome" id="agendamentoNome" class="input required" oninput="validarNome()" placeholder="Antonio Junior">
             <span class="span-required">Digite o nome completo</span>
             <span class="span-required-null">Campo vazio, preencha com um nome válido!</span>
             
             <p>Telefone</p>
-            <input type="text" name="telefone" id="agendamentoTelefone" class="input required" oninput="validarTelefone()">
+            <input type="text" name="telefone" id="agendamentoTelefone" class="input required" oninput="validarTelefone()" placeholder="41999999999" pattern="\(\d{2}\)\s\d{4,5}-\d{4}$">
             <span class="span-required">Digite um número de telefone válido</span>
             <span class="span-required-null">Campo vazio, preencha com um telefone válido!</span>
 
             <p>Email</p>
-            <input type="text" name="email" id="agendamentoEmail" class="input required" oninput="validarEmail()">
+            <input type="text" name="email" id="agendamentoEmail" class="input required" oninput="validarEmail()" placeholder="seuemail@email.com">
             <span class="span-required">Digite um email válido</span>
             <span class="span-required-null">Campo vazio, preencha com um telefone válido!</span>
             
@@ -39,6 +39,9 @@
                 <option value="">Escolha seu barbeiro</option>
                 <span class="span-required-null">Campo vazio, escolha um barbeiro!</span>
             </select>
+
+            <p>Observações</p>
+            <textarea id="observacoes" name="observacoes" rows="4" cols="50" placeholder="Digite suas observações aqui..."></textarea>
 
             <p> Data do Agendamento</p>
             <select name="data" id="agendamentoData" class="input required">
