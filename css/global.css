@@ -1,17 +1,18 @@
-/* Arquivo .css para características presentes em todas páginas. Ex: Menu*/
-/* Pedi para a LM da Antrophic modelo Opus 5.5 criar um estilo visual para barbearia para usar como referência*/
 
-/* Descobri a existência dessa funcionalidade em um reels do Instagram*/
-/*Root para reutilização mais prática das cores e espaçamentos de margem*/
+/* Arquivo .css para características presentes em todas páginas. Ex: Menu */
+/* Pedi para a LM da Antrophic modelo Opus 5.5 criar um estilo visual para barbearia para usar como referência */
+
+/* Descobri a existência dessa funcionalidade em um reels do Instagram */
+/* Root para reutilização mais prática das cores e espaçamentos de margem */
 :root {
-    --couro: #2a1a12;        
-    --couro-claro: #3b2619;  
-    --latao: #c9a24a;        
-    --osso: #efe6d6;         
-    --osso-suave: #b9ab95;   
-    --sangue: #9b2c2c;       
-    --aco: #3c5a78;          
-    --verde: #7fb08a;        
+    --couro: #2a1a12;
+    --couro-claro: #3b2619;
+    --latao: #c9a24a;
+    --osso: #efe6d6;
+    --osso-suave: #b9ab95;
+    --sangue: #9b2c2c;
+    --aco: #3c5a78;
+    --verde: #7fb08a;
 
     --fonte-titulo: Bahnschrift, 'DIN Alternate', 'Arial Narrow', sans-serif;
     --fonte-texto: Georgia, 'Times New Roman', serif;
@@ -21,7 +22,7 @@
     --esp-g: 35px;
 }
 
-/*Corpo do texto*/
+/* Corpo do texto */
 body {
     background-color: var(--couro);
     color: var(--osso);
@@ -30,57 +31,88 @@ body {
     margin: 0;
 }
 
-/*Títulos*/
+/* Títulos */
 h1, h2, h3 {
     font-family: var(--fonte-titulo);
-    line-height: 1.0;
-    margin: 0 0 var(--esp-m) 0;
+    line-height: 1.2;
+    margin: 0 0 var(--esp-m);
 }
 
-/*Para mudar a cor somente do h2(capricho hehe)*/
+/* Para mudar a cor somente do h2(capricho hehe) */
 h2 {
     color: var(--latao);
 }
 
-/*Menu*/
-.menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+/* Área de conteudo de todas as páginas */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--esp-g);
 }
 
-/*Links*/
-.menu ul a {
-    text-decoration: none;
-    color: var(--osso-suave);
-    padding: var(--esp-p) var(--esp-m);
-    display: block;
-    font-family: var(--fonte-titulo);
-    border-bottom: 2px solid transparent;
+/* Atributo hidden sempre esconde */
+[hidden] {
+    display: none !important;
 }
 
-/*hover para dar um efeito visual*/
-.menu ul a:hover{
-    color: var(--osso);
+/* Menu */
+.cabecalho {
+    background-color: var(--couro);
 }
 
-/* Nome a esquerda e os links à direita*/
 .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 24px;
+    padding: 12px 28px;
 }
 
-/*Nome da barbearia*/
+/* Links */
+.menu-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: var(--osso-suave);
+    padding: var(--esp-p) 0;
+    display: block;
+    font-family: var(--fonte-titulo);
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* hover para dar um efeito visual */
+.menu-links a:hover,
+.menu-links a:focus-visible {
+    color: var(--latao);
+}
+
+/* Link da página atual */
+.menu-links a.active,
+.menu-links a[aria-current="page"] {
+    color: var(--latao);
+    border-bottom-color: var(--latao);
+}
+
+/* Nome a esquerda e os links à direita */
+/* Nome da barbearia */
 .marca {
     font-family: var(--fonte-titulo);
     color: var(--osso);
     text-decoration: none;
     font-size: 1.25rem;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
-/*Listra inspirada no icônico barber pole*/
+/* Listra inspirada no icônico barber pole */
 .listra {
     height: var(--esp-p);
     background: repeating-linear-gradient(
@@ -91,39 +123,31 @@ h2 {
         var(--osso) 30px 40px
     );
 }
-/* Link da página atual */
-    .menu ul a.active {
-    color: var(--latao);
-    border-bottom: 2px solid var(--latao);
-}
 
-/*Botão reutilizavel em todas as páginas*/
+/* Botão reutilizavel em todas as páginas */
 .btn {
     background-color: var(--latao);
-    color:var(--couro);
-    text-decoration: none;
+    color: var(--couro);
     font-family: var(--fonte-titulo);
     font-weight: 600;
     padding: 12px 24px;
+    border: 1px solid transparent;
     border-radius: 4px;
     display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-/*Botão reutilizavel com efeito*/
-.btn:hover{
-    background:#dbb560;
+/* Botão reutilizavel com efeito */
+.btn:hover {
+    background: #dbb560;
 }
 
-/* Atributo hidden sempre esconde*/
-[hidden] {
-    display: none !important;
-}
-
-/* Área de conteudo de todas as páginas */
-main {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: var(--esp-g) var(--esp-g);
+.btn:focus-visible {
+    outline: 2px solid var(--osso);
+    outline-offset: 3px;
 }
 
 /* Estilos exclusivos da página do comprovante */
@@ -136,12 +160,14 @@ main {
     color: var(--couro);
     padding: 28px;
     border-radius: 2px;
+    overflow-wrap: anywhere;
 }
 
 /* Cada linha rótulo a direita e valor a esquerda */
 .comprovante p {
     display: flex;
     justify-content: space-between;
+    gap: var(--esp-m);
     margin: 0;
     padding: 10px 0;
     border-bottom: 1px dashed var(--osso-suave);
@@ -150,6 +176,7 @@ main {
 /* O valor em negrito */
 .comprovante span {
     font-weight: bold;
+    text-align: right;
 }
 
 /* Picote em cima e embaixo do tíquete */
@@ -160,25 +187,98 @@ main {
     left: 0;
     right: 0;
     height: 10px;
-    background: radial-gradient(circle at 8px 5px, var(--couro) 5px, transparent 5.5px);
+    background: radial-gradient(
+        circle at 8px 5px,
+        var(--couro) 5px,
+        transparent 5.5px
+    );
     background-size: 16px 10px;
+    pointer-events: none;
 }
 
-.comprovante::before { top: -5px; }
-.comprovante::after  { bottom: -5px; }
+.comprovante::before {
+    top: -5px;
+}
+
+.comprovante::after {
+    bottom: -5px;
+}
 
 /* Botões lado a lado, abaixo do tíquete */
 .acoes {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--esp-m);
     margin-top: var(--esp-g);
 }
 
-/* Na impressão, só o tíquete aparece */
-@media print {
-    #menu,
+/* responsividade */
+@media (max-width: 600px) {
+    main {
+        padding: 24px 16px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px 12px;
+    }
+
+    .menu-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+    }
+
+    .comprovante {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .comprovante p {
+        flex-wrap: wrap;
+    }
+
     .acoes {
-        display: none;
+        flex-direction: column;
+    }
+
+    .acoes .btn {
+        box-sizing: border-box;
+        width: 100%;
     }
 }
 
+/* Na impressão, só o tíquete aparece */
+@media print {
+    .cabecalho,
+    .listra,
+    .acoes {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    main {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .comprovante {
+        max-width: none;
+        border: 1px solid #ccc;
+        background: white;
+        color: black;
+        print-color-adjust: exact;
+    }
+
+    .comprovante::before,
+    .comprovante::after {
+        display: none;
+    }
+}

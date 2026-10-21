@@ -1,26 +1,39 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br>
 <!-- Estrutura da página principal -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2a1a12">
+
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
-    <title>Página Principal</title>
+    <script src="script/menu.js" defer></script>
+
+    <title>Barbearia Antônios | Corte bem feito, sem fila</title>
+    <meta name="description" content="Agende seu horário na Barbearia Antônios. Confira nossos serviços, preços e horários de funcionamento.">
 </head>
 
 <body>
-    <header id="menu"></header>
-    <script src="script/menu.js"></script>
+    <header id="menu">
+    </header>
 
     <main>
         <!-- Abertura -->
         <section class="abertura">
             <div>
                 <h1>Corte bem feito, sem fila.</h1>
-                <p>Escolha o barbeiro, o dia e o horário. Você chega, senta e é atendido no horário marcado.</p>
-                <a href="form.html" class="btn">Agendar horário</a>
+
+                <p>
+                    Escolha o barbeiro, o dia e o horário.
+                    Você chega, senta e é atendido no horário marcado.
+                </p>
+
+                <a href="form.html" class="btn">
+                    Agendar horário
+                </a>
             </div>
 
             <!-- Poste da barbearia -->
@@ -33,35 +46,67 @@
 
         <!-- Serviços e horários, lado a lado -->
         <div class="colunas">
-        <!-- Serviços e preços -->
-        <section class="servicos">
-            <h2>Serviços</h2>
-            <ul class="precos">
-                <li>
-                    <span>Corte de cabelo<small>Tesoura ou máquina, acabamento na navalha</small></span>
-                    <span class="pontilhado"></span>
-                    <span class="preco">R$ 40</span>
-                </li>
-                <li>
-                    <span>Barba<small>Toalha quente e modelagem</small></span>
-                    <span class="pontilhado"></span>
-                    <span class="preco">R$ 30</span>
-                </li>
-                <li>
-                    <span>Cabelo e barba<small>Os dois serviços juntos</small></span>
-                    <span class="pontilhado"></span>
-                    <span class="preco">R$ 60</span>
-                </li>
-            </ul>
-        </section>
 
-        <!-- Horários de funcionamento -->
-        <section class="horarios">
-            <h2>Horários</h2>
-            <p>Terça a sexta<br>9h às 19h</p>
-            <p>Sábado<br>8h às 14h</p>
-            <p>Domingo e segunda<br>Fechado</p>
-        </section>
+            <!-- Serviços e preços -->
+            <section class="servicos" aria-labelledby="titulo-servicos">
+                <h2 id="titulo-servicos">Serviços</h2>
+
+                <ul class="precos">
+                    <li>
+                        <span>
+                            Corte de cabelo
+                            <small>Tesoura ou máquina, acabamento na navalha</small>
+                        </span>
+
+                        <span class="pontilhado" aria-hidden="true"></span>
+
+                        <span class="preco">R$ 40</span>
+                    </li>
+
+                    <li>
+                        <span>
+                            Barba
+                            <small>Toalha quente e modelagem</small>
+                        </span>
+
+                        <span class="pontilhado" aria-hidden="true"></span>
+
+                        <span class="preco">R$ 30</span>
+                    </li>
+
+                    <li>
+                        <span>
+                            Cabelo e barba
+                            <small>Os dois serviços juntos</small>
+                        </span>
+
+                        <span class="pontilhado" aria-hidden="true"></span>
+
+                        <span class="preco">R$ 60</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Horários de funcionamento -->
+            <section class="horarios" aria-labelledby="titulo-horarios">
+                <h2 id="titulo-horarios">Horários</h2>
+
+                <p>
+                    <span>Terça a sexta</span>
+                    <span>9h às 19h</span>
+                </p>
+
+                <p>
+                    <span>Sábado</span>
+                    <span>8h às 14h</span>
+                </p>
+
+                <p>
+                    <span>Domingo e segunda</span>
+                    <span class="fechado">Fechado</span>
+                </p>
+            </section>
+
         </div>
     </main>
 </body>

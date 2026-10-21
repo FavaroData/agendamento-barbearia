@@ -1,3 +1,4 @@
+
 /* Estilos exclusivos da página do formulário */
 /* O HTML é do Lucas: este arquivo estiliza a estrutura dele, sem mudá-la */
 
@@ -5,13 +6,39 @@
 .agendamento {
     max-width: 560px;
     margin: 0 auto;
-    padding: var(--esp-g) var(--esp-m);
+    padding: 40px var(--esp-m) 55px;
+}
+
+/* Título e introdução do formulário */
+.agendamento h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.15;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.agendamento h2 {
+    margin-top: var(--esp-g);
+    margin-bottom: var(--esp-m);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--couro-claro);
+}
+
+.agendamento .introducao {
+    color: var(--osso-suave);
+    font-family: var(--fonte-texto);
+    line-height: 1.7;
+    margin: 0 0 30px;
 }
 
 /* Rótulos de cada campo */
 .agendamento p {
     font-family: var(--fonte-titulo);
-    margin: var(--esp-m) 0 6px 0;
+    margin: 22px 0 7px;
+}
+
+.agendamento label {
+    color: var(--osso);
 }
 
 /* Campos de texto, listas e observações */
@@ -20,19 +47,28 @@
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: 12px 14px;
+    padding: 13px 14px;
     background-color: var(--couro-claro);
     color: var(--osso);
-    border: 1px solid var(--osso-suave);
+    border: 1px solid #70553a;
     border-radius: 4px;
     font-family: var(--fonte-texto);
     font-size: 1rem;
+    line-height: 1.5;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Mantém a aparência coerente com os demais campos */
+.agendamento textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
 /* Texto de exemplo dentro dos campos */
 .agendamento .input::placeholder,
 .agendamento textarea::placeholder {
     color: var(--osso-suave);
+    opacity: 1;
 }
 
 /* Campo em uso com borda estilizada */
@@ -40,16 +76,26 @@
 .agendamento textarea:focus {
     outline: none;
     border-color: var(--latao);
+    box-shadow: 0 0 0 3px rgb(201 162 74 / 15%);
 }
 
 /* Opções de serviço */
 .agendamento input[type="radio"] {
     accent-color: var(--latao);
+    cursor: pointer;
+    margin-bottom: 12px;
 }
 
 .agendamento input[type="radio"] + label {
-    margin-right: var(--esp-m);
+    display: inline-block;
+    margin: 6px var(--esp-m) 6px 4px;
+    color: var(--osso);
     cursor: pointer;
+}
+
+/* Realce discreto ao passar o mouse nas opções */
+.agendamento input[type="radio"] + label:hover {
+    color: var(--latao);
 }
 
 /* Mensagens de erro */
@@ -58,23 +104,70 @@
     display: none;
     color: #e88a8a;
     font-size: 0.9rem;
-    margin-top: 4px;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+/* Destaque para os campos obrigatórios inválidos */
+.agendamento .input:invalid:focus {
+    border-color: var(--sangue);
 }
 
 /* Botão de enviar mesmo visual do .btn */
 .agendamento button {
-    margin-top: var(--esp-g);
+    display: inline-block;
+    margin-top: 30px;
     background-color: var(--latao);
     color: var(--couro);
     font-family: var(--fonte-titulo);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
-    padding: 12px 24px;
-    border: none;
+    padding: 13px 26px;
+    border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
+    box-shadow: 0 4px 0 #8f7230;
+    transition: background-color 0.2s ease, transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .agendamento button:hover {
     background-color: #dbb560;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #8f7230;
+}
+
+.agendamento button:focus-visible {
+    outline: 2px solid var(--osso);
+    outline-offset: 4px;
+}
+
+/* Evita animações para quem prefere movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .agendamento *,
+    .agendamento *::before,
+    .agendamento *::after {
+        scroll-behavior: auto;
+        transition: none;
+    }
+}
+
+/* responsividade */
+@media (max-width: 600px) {
+    .agendamento {
+        padding: 30px 16px 40px;
+    }
+
+    .agendamento h1 {
+        font-size: 2.25rem;
+    }
+
+    .agendamento button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .agendamento input[type="radio"] + label {
+        margin-right: 12px;
+    }
 }
