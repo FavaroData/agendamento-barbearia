@@ -9,6 +9,13 @@
     gap: var(--esp-g);
     padding: 40px 0 55px;
     min-height: 320px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(41, 25, 16, 0.95) 0%,
+            rgba(41, 25, 16, 0.75) 55%,
+            rgba(41, 25, 16, 0.35) 100%
+        )
 }
 
 .abertura > div:first-child {
