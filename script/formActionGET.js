@@ -7,6 +7,7 @@ const servico = parametros.get("servico");
 const barbeiroNome = parametros.get("barbeiroNome");
 const data = parametros.get("data");
 const horario = parametros.get("horario");
+const observacoes = parametros.get("observacoes")
 
 // Sem nome na URL. A página foi aberta sem passar pelo formulário
 if (!nome) {

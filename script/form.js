@@ -101,7 +101,12 @@ const spansNull = document.querySelectorAll(".span-required-null");
 
 const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
-// evento que valida os campos preenchidos ao clicar em "agendar"
+// evento que executa ao clicar em "agendar":
+// valida os campos preenchidos,
+// verifica se está vazio, ou se está com escrita inválida
+// se tiver todos os campos certos, retorna no console valido ou invalido
+// se nao, para a validação e retorna os erros
+// cria uma variavel com os dados e envia para o formaction
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -128,7 +133,7 @@ form.addEventListener("submit", (event) => {
     }
 
     // validaçãp no console do form 
-    console.log("Formulário válido:", formularioValido);
+    console.log("Formulário válido!", formularioValido);
 
     // define se para a validação ou nao
     if (!formularioValido) {
@@ -145,8 +150,9 @@ form.addEventListener("submit", (event) => {
     dados.append("barbeiroNome", document.getElementById("agendamentoBarbeiro").value);
     dados.append("data", document.getElementById("agendamentoData").value);
     dados.append("horario", document.getElementById("agendamentoHorario").value);
+    dados.append("observacoes", document.getElementById("agendamentoObservacoes").value);
 
-    // redirecionamento da página
+    // envia os dados e redireciona a página
     window.location.href = "formAction.html?" + dados.toString();
 });
 
