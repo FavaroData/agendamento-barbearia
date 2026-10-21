@@ -1,71 +1,111 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2a1a12">
+
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/form.css">
+
+    <script src="script/menu.js" defer></script>
     <script src="script/form.js" defer></script>
-    <title>Agendamento</title>
+
+    <title>Agendamento | Barbearia Antônios</title>
+    <meta name="description" content="Agende seu horário na Barbearia Antônios. Escolha seu serviço, barbeiro, data e horário.">
 </head>
+
 <body>
     <header id="menu">
-        <script src="script/menu.js"></script>
     </header>
-    <div id="agendamento" class="agendamento">
-        <form id="agendamentoForm" action="formAction.html" method="GET">
-            <p>Nome Completo</p>
-            <input type="text" name="nome" id="agendamentoNome" class="input required" oninput="validarNome()" placeholder="Antonio Junior">
-            <span class="span-required">Digite o nome completo</span>
-            <span class="span-required-null">Campo vazio, preencha com um nome válido!</span>
-            
-            <p>Telefone</p>
-            <input type="text" name="telefone" id="agendamentoTelefone" class="input required" oninput="validarTelefone()" placeholder="41999999999" pattern="\(\d{2}\)\s\d{4,5}-\d{4}$">
-            <span class="span-required">Digite um número de telefone válido</span>
-            <span class="span-required-null">Campo vazio, preencha com um telefone válido!</span>
 
-            <p>Email</p>
-            <input type="text" name="email" id="agendamentoEmail" class="input required" oninput="validarEmail()" placeholder="seuemail@email.com">
-            <span class="span-required">Digite um email válido</span>
-            <span class="span-required-null">Campo vazio, preencha com um telefone válido!</span>
-            
-            <p>Serviço Desejado</p>
+    <main>
+        <div id="agendamento" class="agendamento">
+            <h1>Agende seu horário</h1>
+            <p class="introducao">
+                Escolha seu serviço, barbeiro e horário para ter uma experiência
+                tranquila na Barbearia Antônios.
+            </p>
 
-            <input type="radio" name="servico" id="agendamentoServicoCabelo" value="Corte de Cabelo">
-            <label for="agendamentoServicoCabelo">Corte de Cabelo</label>
+            <form id="agendamentoForm" action="formAction.html" method="GET">
+                <p>
+                    <label for="agendamentoNome">Nome Completo</label>
+                </p>
+                <input type="text" name="nome" id="agendamentoNome" class="input required"
+                    oninput="validarNome()" placeholder="Antonio Junior"
+                    autocomplete="name" required>
+                <span class="span-required">Digite o nome completo</span>
+                <span class="span-required-null">Campo vazio, preencha com um nome válido!</span>
 
-            <input type="radio" name="servico" id="agendamentoServicoBarba" value="Barba">
-            <label for="agendamentoServicoBarba">Barba</label>
+                <p>
+                    <label for="agendamentoTelefone">Telefone</label>
+                </p>
+                <input type="text" name="telefone" id="agendamentoTelefone" class="input required"
+                    oninput="validarTelefone()" placeholder="41999999999"
+                    pattern="(\(\d{2}\)\s?)?\d{4,5}-?\d{4}"
+                    autocomplete="tel" required>
+                <span class="span-required">Digite um número de telefone válido</span>
+                <span class="span-required-null">Campo vazio, preencha com um telefone válido!</span>
 
-            <input type="radio" name="servico" id="agendamentoServicoCabeloBarba" value="Cabelo e Barba">
-            <label for="agendamentoServicoCabeloBarba">Cabelo e Barba</label>
-            <span class="span-required"> </span> <!-- Span para evitar o erro no for de leitura das classes span no form.js-->
-            <span class="span-required-null">Campo vazio, selecione uma opção!</span>
-            
-            <p>Barbeiro</p>
-            <select name="barbeiroNome" id="agendamentoBarbeiro" class="input required">
-                <option value="">Escolha seu barbeiro</option>
-            </select>
-            <span class="span-required"> </span> <!-- Span para evitar o erro no for de leitura das classes span no form.js-->
-            <span class="span-required-null">Campo vazio, escolha um barbeiro!</span>
+                <p>
+                    <label for="agendamentoEmail">Email</label>
+                </p>
+                <input type="email" name="email" id="agendamentoEmail" class="input required"
+                    oninput="validarEmail()" placeholder="seuemail@email.com"
+                    autocomplete="email" required>
+                <span class="span-required">Digite um email válido</span>
+                <span class="span-required-null">Campo vazio, preencha com um email válido!</span>
 
-            <p>Observações</p>
-            <textarea name="observacoes" id="agendamentoObservacoes" rows="4" cols="50" placeholder="Digite suas observações aqui..."></textarea>
+                <p>Serviço Desejado</p>
 
-            <p> Data do Agendamento</p>
-            <select name="data" id="agendamentoData" class="input required">
-                <option value="">Selecione uma Data</option>
-            </select>
-            <span class="span-required-null">Campo vazio, selecione uma data!</span>
+                <input type="radio" name="servico" id="agendamentoServicoCabelo" value="Corte de Cabelo" required>
+                <label for="agendamentoServicoCabelo">Corte de Cabelo</label>
 
-            <p> Horario Desejado </p>
-            <select name="horario" id="agendamentoHorario" class="input required">
-                <option value="">Selecione um Horario</option>
-            </select>
-            <span class="span-required"> </span> <!-- Span para evitar o erro no for de leitura das classes span no form.js-->
-            <span class="span-required-null">Campo vazio, preencha com um horário para agendamento!</span>
-            <button type="submit">Agendar</button>
-        </form>
-    </div>
+                <input type="radio" name="servico" id="agendamentoServicoBarba" value="Barba">
+                <label for="agendamentoServicoBarba">Barba</label>
+
+                <input type="radio" name="servico" id="agendamentoServicoCabeloBarba" value="Cabelo e Barba">
+                <label for="agendamentoServicoCabeloBarba">Cabelo e Barba</label>
+
+                <span class="span-required"> </span> <!-- Span para evitar o erro no for de leitura das classes span no form.js-->
+                <span class="span-required-null">Campo vazio, selecione uma opção!</span>
+
+                <p>
+                    <label for="agendamentoBarbeiro">Barbeiro</label>
+                </p>
+                <select name="barbeiroNome" id="agendamentoBarbeiro" class="input required" required>
+                    <option value="">Escolha seu barbeiro</option>
+                </select>
+                <span class="span-required"> </span> <!-- Span para evitar o erro no for de leitura das classes span no form.js-->
+                <span class="span-required-null">Campo vazio, escolha um barbeiro!</span>
+
+                <p>
+                    <label for="agendamentoObservacoes">Observações</label>
+                </p>
+                <textarea name="observacoes" id="agendamentoObservacoes" rows="4" cols="50"
+                    placeholder="Digite suas observações aqui..."></textarea>
+
+                <p>
+                    <label for="agendamentoData">Data do Agendamento</label>
+                </p>
+                <select name="data" id="agendamentoData" class="input required" required>
+                    <option value="">Selecione uma data</option>
+                </select>
+                <span class="span-required-null">Campo vazio, selecione uma data!</span>
+
+                <p>
+                    <label for="agendamentoHorario">Horário Desejado</label>
+                </p>
+                <select name="horario" id="agendamentoHorario" class="input required" required>
+                    <option value="">Selecione um horário</option>
+                </select>
+                <span class="span-required"> </span> <!-- Span para evitar o erro no for de leitura das classes span no form.js-->
+                <span class="span-required-null">Campo vazio, preencha com um horário para agendamento!</span>
+
+                <button type="submit">Agendar horário</button>
+            </form>
+        </div>
+    </main>
 </body>
 </html>

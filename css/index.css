@@ -193,6 +193,28 @@
     color: var(--osso);
 }
 
+/* horários organizados em duas colunas */
+.horarios p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--esp-m);
+    padding: 14px 0;
+    border-bottom: 1px solid rgb(239 230 214 / 10%);
+}
+
+.horarios p span:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.horarios .fechado {
+    color: var(--osso-suave);
+    font-style: italic;
+}
+
+
 /* Desliza o fundo um azulejo inteiro para baixo */
 @keyframes girar {
     from {

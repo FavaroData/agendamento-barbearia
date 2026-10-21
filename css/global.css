@@ -212,7 +212,7 @@ main {
     margin-top: var(--esp-g);
 }
 
-/* Ajustes para telas menores */
+/* responsividade */
 @media (max-width: 600px) {
     main {
         padding: 24px 16px;

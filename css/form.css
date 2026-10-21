@@ -24,10 +24,21 @@
     border-bottom: 1px solid var(--couro-claro);
 }
 
+.agendamento .introducao {
+    color: var(--osso-suave);
+    font-family: var(--fonte-texto);
+    line-height: 1.7;
+    margin: 0 0 30px;
+}
+
 /* Rótulos de cada campo */
 .agendamento p {
     font-family: var(--fonte-titulo);
     margin: 22px 0 7px;
+}
+
+.agendamento label {
+    color: var(--osso);
 }
 
 /* Campos de texto, listas e observações */
@@ -72,6 +83,7 @@
 .agendamento input[type="radio"] {
     accent-color: var(--latao);
     cursor: pointer;
+    margin-bottom: 12px;
 }
 
 .agendamento input[type="radio"] + label {
@@ -92,7 +104,13 @@
     display: none;
     color: #e88a8a;
     font-size: 0.9rem;
+    line-height: 1.5;
     margin-top: 5px;
+}
+
+/* Destaque para os campos obrigatórios inválidos */
+.agendamento .input:invalid:focus {
+    border-color: var(--sangue);
 }
 
 /* Botão de enviar mesmo visual do .btn */
@@ -126,14 +144,15 @@
 
 /* Evita animações para quem prefere movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
-    .agendamento .input,
-    .agendamento textarea,
-    .agendamento button {
+    .agendamento *,
+    .agendamento *::before,
+    .agendamento *::after {
+        scroll-behavior: auto;
         transition: none;
     }
 }
 
-/* Ajustes para telas estreitas */
+/* responsividade */
 @media (max-width: 600px) {
     .agendamento {
         padding: 30px 16px 40px;
