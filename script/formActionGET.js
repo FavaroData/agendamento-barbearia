@@ -9,10 +9,12 @@ const data = parametros.get("data");
 const horario = parametros.get("horario");
 const observacoes = parametros.get("observacoes")
 
+// Sem nome na URL. A página foi aberta sem passar pelo formulário
 if (!nome) {
-    document.getElementById("titulo").textContent = "Nenhum agendamento realizado"
+    document.getElementById("titulo").textContent = "Nenhum agendamento realizado";
     document.getElementById("comprovante").hidden = true;
-} else { 
+    document.getElementById("imprimir").hidden = true;
+} else {
     document.getElementById("nomeCliente").textContent = nome;
     document.getElementById("telefone").textContent = telefone;
     document.getElementById("email").textContent = email;
@@ -20,5 +22,9 @@ if (!nome) {
     document.getElementById("nomeBarbeiro").textContent = barbeiroNome;
     document.getElementById("data").textContent = data;
     document.getElementById("horario").textContent = horario;
-    document.getElementById("observacoes").textContent = observacoes;
 }
+
+// Botão de imprimir que abre a janela de impressão do navegador
+document.getElementById("imprimir").addEventListener("click", function () {
+    window.print();
+});

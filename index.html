@@ -1,22 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<!-- Estrutura da página principal -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
     <title>Página Principal</title>
 </head>
+
 <body>
     <header id="menu"></header>
     <script src="script/menu.js"></script>
-    <div class="title">
-        <h1> Barbearia Antônios </h1>
-        <h3> Bem-vindo à nossa barbearia. Os melhores serviços para você! </h3>
-    </div>
 
-    <div class="options">
-            <button type="submit" onclick="window.location.href='form.html'">Agendar</button>
-            
-    </div>
+    <main>
+        <!-- Abertura -->
+        <section class="abertura">
+            <div>
+                <h1>Corte bem feito, sem fila.</h1>
+                <p>Escolha o barbeiro, o dia e o horário. Você chega, senta e é atendido no horário marcado.</p>
+                <a href="form.html" class="btn">Agendar horário</a>
+            </div>
+
+            <!-- Poste da barbearia -->
+            <div class="poste" aria-hidden="true">
+                <div class="tampa topo"></div>
+                <div class="vidro"></div>
+                <div class="tampa"></div>
+            </div>
+        </section>
+
+        <!-- Serviços e horários, lado a lado -->
+        <div class="colunas">
+        <!-- Serviços e preços -->
+        <section class="servicos">
+            <h2>Serviços</h2>
+            <ul class="precos">
+                <li>
+                    <span>Corte de cabelo<small>Tesoura ou máquina, acabamento na navalha</small></span>
+                    <span class="pontilhado"></span>
+                    <span class="preco">R$ 40</span>
+                </li>
+                <li>
+                    <span>Barba<small>Toalha quente e modelagem</small></span>
+                    <span class="pontilhado"></span>
+                    <span class="preco">R$ 30</span>
+                </li>
+                <li>
+                    <span>Cabelo e barba<small>Os dois serviços juntos</small></span>
+                    <span class="pontilhado"></span>
+                    <span class="preco">R$ 60</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Horários de funcionamento -->
+        <section class="horarios">
+            <h2>Horários</h2>
+            <p>Terça a sexta<br>9h às 19h</p>
+            <p>Sábado<br>8h às 14h</p>
+            <p>Domingo e segunda<br>Fechado</p>
+        </section>
+        </div>
+    </main>
 </body>
+
 </html>
