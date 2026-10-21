@@ -85,6 +85,8 @@
 .pontilhado {
     flex: 1;
     border-bottom: 2px dotted var(--osso-suave);
+    position: relative;
+    top: 27px;
 }
 
 /* O preço em destaque */
@@ -92,6 +94,8 @@
     font-family: var(--fonte-titulo);
     color: var(--latao);
     font-size: 1.15rem;
+    position: relative;
+    top: 27px;
 }
 
 /* A descrição embaixo do nome do serviço */
