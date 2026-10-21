@@ -4,39 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Comprovante de agendamento da Barbearia Antônios. Consulte os dados do seu atendimento.">
+    <meta name="theme-color" content="#f5f0e6">
+
+    <title>Agendamento confirmado | Barbearia Antônios</title>
+
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/formAction.css">
-    <title>Agendamento confirmado</title>
 </head>
 
 <body>
-   <!-- script de menu ficando dentro do header dá possibilidade dele ser tratado no css depois, depois só tem que jogar pras outras páginas -->
+    <!-- script de menu ficando dentro do header dá possibilidade dele ser tratado no css depois, depois só tem que jogar pras outras páginas -->
     <header id="menu">
-        <script src="script/menu.js"></script>
+        <script src="script/menu.js" defer></script>
     </header>
 
-    <main>
+    <main id="conteudo-principal">
         <h1 id="titulo">Agendamento confirmado</h1>
 
         <!-- Comprovantes -->
-        <section class="comprovante" id="comprovante">
-            <p>Nome: <span id="nomeCliente"></span></p>
-            <p>Telefone: <span id="telefone"></span></p>
-            <p>E-mail: <span id="email"></span></p>
-            <p>Data: <span id="data"></span></p>
-            <p>Horário: <span id="horario"></span></p>
-            <p>Barbeiro: <span id="nomeBarbeiro"></span></p>
-            <p>Serviço: <span id="tipoServico"></span></p>
+        <section
+            class="comprovante"
+            id="comprovante"
+            aria-labelledby="titulo"
+            aria-label="Comprovante do agendamento"
+        >
+            <p>
+                <strong>Nome:</strong>
+                <span id="nomeCliente"></span>
+            </p>
+
+            <p>
+                <strong>Telefone:</strong>
+                <span id="telefone"></span>
+            </p>
+
+            <p>
+                <strong>E-mail:</strong>
+                <span id="email"></span>
+            </p>
+
+            <p>
+                <strong>Data:</strong>
+                <span id="data"></span>
+            </p>
+
+            <p>
+                <strong>Horário:</strong>
+                <span id="horario"></span>
+            </p>
+
+            <p>
+                <strong>Barbeiro:</strong>
+                <span id="nomeBarbeiro"></span>
+            </p>
+
+            <p>
+                <strong>Serviço:</strong>
+                <span id="tipoServico"></span>
+            </p>
         </section>
 
         <!-- Ações do comprovante -->
-        <div class="acoes">
-            <button type="button" class="btn" id="imprimir">Imprimir comprovante</button>
-            <a href="form.html" class="btn">Novo agendamento</a>
-        </div>
+        <nav class="acoes" aria-label="Ações do comprovante">
+            <button
+                type="button"
+                class="btn"
+                id="imprimir"
+                aria-label="Imprimir comprovante de agendamento"
+            >
+                Imprimir comprovante
+            </button>
+
+            <a href="form.html" class="btn">
+                Novo agendamento
+            </a>
+        </nav>
     </main>
 
-    <script src="script/formActionGET.js"></script>
+    <script src="script/formActionGET.js" defer></script>
 </body>
 
 </html>
