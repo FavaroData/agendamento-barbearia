@@ -1,0 +1,56 @@
+/* Estilos exclusivos da página do comprovante */
+
+/* O comprovante como um tíquete de papel */
+.comprovante {
+    position: relative;
+    max-width: 420px;
+    background-color: var(--osso);
+    color: var(--couro);
+    padding: 28px;
+    border-radius: 2px;
+}
+
+/* Cada linha rótulo a direita e valor a esquerda */
+.comprovante p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--osso-suave);
+}
+
+/* O valor em negrito */
+.comprovante span {
+    font-weight: bold;
+}
+
+/* Picote em cima e embaixo do tíquete */
+.comprovante::before,
+.comprovante::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: radial-gradient(circle at 8px 5px, var(--couro) 5px, transparent 5.5px);
+    background-size: 16px 10px;
+}
+
+.comprovante::before { top: -5px; }
+.comprovante::after  { bottom: -5px; }
+
+/* Botões lado a lado, abaixo do tíquete */
+.acoes {
+    display: flex;
+    gap: var(--esp-m);
+    margin-top: var(--esp-g);
+}
+
+/* Na impressão, só o tíquete aparece */
+@media print {
+    #menu,
+    .acoes {
+        display: none;
+    }
+}
+
