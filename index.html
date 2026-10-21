@@ -1,39 +1,28 @@
-
 <!DOCTYPE html>
-<html lang="pt-br>
+<html lang="pt-br">
 <!-- Estrutura da página principal -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2a1a12">
-
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="script/menu.js" defer></script>
-
-    <title>Barbearia Antônios | Corte bem feito, sem fila</title>
-    <meta name="description" content="Agende seu horário na Barbearia Antônios. Confira nossos serviços, preços e horários de funcionamento.">
+    <title>Página Principal</title>
 </head>
 
 <body>
     <header id="menu">
+        <script src="script/menu.js"></script>
     </header>
+    
 
     <main>
         <!-- Abertura -->
         <section class="abertura">
             <div>
                 <h1>Corte bem feito, sem fila.</h1>
-
-                <p>
-                    Escolha o barbeiro, o dia e o horário.
-                    Você chega, senta e é atendido no horário marcado.
-                </p>
-
-                <a href="form.html" class="btn">
-                    Agendar horário
-                </a>
+                <p>Escolha o barbeiro, o dia e o horário. Você chega, senta e é atendido no horário marcado.</p>
+                <a href="form.html" class="btn">Agendar horário</a>
             </div>
 
             <!-- Poste da barbearia -->
@@ -46,46 +35,27 @@
 
         <!-- Serviços e horários, lado a lado -->
         <div class="colunas">
-
-            <!-- Serviços e preços -->
-            <section class="servicos" aria-labelledby="titulo-servicos">
-                <h2 id="titulo-servicos">Serviços</h2>
-
-                <ul class="precos">
-                    <li>
-                        <span>
-                            Corte de cabelo
-                            <small>Tesoura ou máquina, acabamento na navalha</small>
-                        </span>
-
-                        <span class="pontilhado" aria-hidden="true"></span>
-
-                        <span class="preco">R$ 40</span>
-                    </li>
-
-                    <li>
-                        <span>
-                            Barba
-                            <small>Toalha quente e modelagem</small>
-                        </span>
-
-                        <span class="pontilhado" aria-hidden="true"></span>
-
-                        <span class="preco">R$ 30</span>
-                    </li>
-
-                    <li>
-                        <span>
-                            Cabelo e barba
-                            <small>Os dois serviços juntos</small>
-                        </span>
-
-                        <span class="pontilhado" aria-hidden="true"></span>
-
-                        <span class="preco">R$ 60</span>
-                    </li>
-                </ul>
-            </section>
+        <!-- Serviços e preços -->
+        <section class="servicos">
+            <h2>Serviços</h2>
+            <ul class="precos">
+                <li>
+                    <span>Corte de cabelo<small>Tesoura ou máquina, acabamento na navalha</small></span>
+                    <span class="pontilhado"></span>
+                    <span class="preco">R$ 40</span>
+                </li>
+                <li>
+                    <span>Barba<small>Toalha quente e modelagem</small></span>
+                    <span class="pontilhado"></span>
+                    <span class="preco">R$ 30</span>
+                </li>
+                <li>
+                    <span>Cabelo e barba<small>Os dois serviços juntos</small></span>
+                    <span class="pontilhado"></span>
+                    <span class="preco">R$ 60</span>
+                </li>
+            </ul>
+        </section>
 
             <!-- Horários de funcionamento -->
             <section class="horarios" aria-labelledby="titulo-horarios">
