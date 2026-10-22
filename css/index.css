@@ -150,6 +150,8 @@
     flex: 1;
     min-width: 12px;
     border-bottom: 2px dotted var(--osso-suave);
+    position: relative;
+    top: 27px;
 }
 
 /* O preço em destaque */
@@ -157,8 +159,9 @@
     flex-shrink: 0;
     font-family: var(--fonte-titulo);
     color: var(--latao);
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.15rem;
+    position: relative;
+    top: 27px;
 }
 
 /* A descrição embaixo do nome do serviço */
