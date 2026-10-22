@@ -11,15 +11,22 @@
 </head>
 
 <body>
-    <header id="menu"></header>
-    <script src="script/menu.js"></script>
+    <header id="menu">
+        <script src="script/menu.js"></script>
+    </header>
+    
 
     <main>
         <!-- Abertura -->
         <section class="abertura">
-            <div>
+            <div class="abertura-conteudo">
                 <h1>Corte bem feito, sem fila.</h1>
-                <p>Escolha o barbeiro, o dia e o horário. Você chega, senta e é atendido no horário marcado.</p>
+
+                <p>
+                    Escolha o barbeiro, o dia e o horário.
+                    Você chega, senta e é atendido no horário marcado.
+                </p>
+
                 <a href="form.html" class="btn">Agendar horário</a>
             </div>
 
@@ -30,7 +37,6 @@
                 <div class="tampa"></div>
             </div>
         </section>
-
         <!-- Serviços e horários, lado a lado -->
         <div class="colunas">
         <!-- Serviços e preços -->
@@ -55,13 +61,26 @@
             </ul>
         </section>
 
-        <!-- Horários de funcionamento -->
-        <section class="horarios">
-            <h2>Horários</h2>
-            <p>Terça a sexta<br>9h às 19h</p>
-            <p>Sábado<br>8h às 14h</p>
-            <p>Domingo e segunda<br>Fechado</p>
-        </section>
+            <!-- Horários de funcionamento -->
+            <section class="horarios" aria-labelledby="titulo-horarios">
+                <h2 id="titulo-horarios">Horários</h2>
+
+                <p>
+                    <span>Terça a sexta</span>
+                    <span>9h às 19h</span>
+                </p>
+
+                <p>
+                    <span>Sábado</span>
+                    <span>8h às 14h</span>
+                </p>
+
+                <p>
+                    <span>Domingo e segunda</span>
+                    <span class="fechado">Fechado</span>
+                </p>
+            </section>
+
         </div>
     </main>
 </body>

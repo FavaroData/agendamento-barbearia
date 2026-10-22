@@ -1,3 +1,4 @@
+
 /* Estilos exclusivos da página inicial */
 
 /* Abertura: texto à esquerda, poste à direita */
@@ -6,23 +7,71 @@
     justify-content: space-between;
     align-items: center;
     gap: var(--esp-g);
-    padding-bottom: var(--esp-g);
+    padding: 40px 0 55px;
+    min-height: 320px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(41, 25, 16, 0.95) 0%,
+            rgba(41, 25, 16, 0.75) 55%,
+            rgba(41, 25, 16, 0.35) 100%
+        )
 }
 
-/* $$$ Poste $$$*/
+.abertura > div:first-child {
+    flex: 1;
+    max-width: 560px;
+}
+
+.abertura h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+    max-width: 520px;
+}
+
+.abertura p {
+    max-width: 480px;
+    color: var(--osso-suave);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0 0 28px;
+}
+
+.abertura .btn {
+    box-shadow: 0 4px 0 #8f7230;
+    transition: transform 0.2s ease, background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.abertura .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #8f7230;
+}
+
+/* $$$ Poste $$$ */
 
 /* Empilha as peças do poste, centralizadas */
 .poste {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-shrink: 0;
+    margin-right: 35px;
+    filter: drop-shadow(0 10px 12px rgb(0 0 0 / 20%));
 }
 
 /* Tampas douradas */
 .tampa {
     width: 92px;
     height: 22px;
-    background: linear-gradient(180deg, #e2c574, var(--latao) 50%, #8f7230);
+    background: linear-gradient(
+        180deg,
+        #e2c574,
+        var(--latao) 50%,
+        #8f7230
+    );
     border-radius: 6px;
 }
 
@@ -35,7 +84,7 @@
 /* Vidro listrado, com as listras girando */
 .vidro {
     width: 72px;
-    height: 300px;
+    height: 280px;
     background: repeating-linear-gradient(
         -45deg,
         var(--sangue) 0 18px,
@@ -52,18 +101,28 @@
 /* As duas seções lado a lado */
 .colunas {
     display: flex;
-    gap: var(--esp-g);
+    align-items: flex-start;
+    gap: clamp(28px, 5vw, 64px);
     border-top: 1px solid var(--couro-claro);
-    padding-top: var(--esp-g);
+    padding-top: 38px;
 }
 
 /* Os serviços ocupam mais espaço que os horários */
 .servicos {
     flex: 3;
+    min-width: 0;
 }
 
 .horarios {
     flex: 2;
+    min-width: 0;
+}
+
+/* Títulos das seções */
+.servicos h2,
+.horarios h2 {
+    font-size: 1.65rem;
+    margin-bottom: 24px;
 }
 
 /* Tabela de preços, no estilo das placas de barbearia */
@@ -78,12 +137,18 @@
     display: flex;
     align-items: baseline;
     gap: var(--esp-p);
-    padding: 10px 0;
+    padding: 18px 0;
+    border-bottom: 1px solid rgb(239 230 214 / 10%);
+}
+
+.precos li:first-child {
+    padding-top: 0;
 }
 
 /* Ocupa todo o espaço entre o nome e o preço */
 .pontilhado {
     flex: 1;
+    min-width: 12px;
     border-bottom: 2px dotted var(--osso-suave);
     position: relative;
     top: 27px;
@@ -91,6 +156,7 @@
 
 /* O preço em destaque */
 .preco {
+    flex-shrink: 0;
     font-family: var(--fonte-titulo);
     color: var(--latao);
     font-size: 1.15rem;
@@ -102,13 +168,72 @@
 .precos small {
     display: block;
     color: var(--osso-suave);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: 5px;
 }
+
+/* Horários com separação visual */
+.horarios p {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+    padding: 14px 0;
+    border-bottom: 1px solid rgb(239 230 214 / 10%);
+}
+
+.horarios p:first-of-type {
+    padding-top: 0;
+}
+
+.horarios p:last-child {
+    border-bottom: none;
+}
+
+.horarios p br {
+    display: none;
+}
+
+.horarios p {
+    color: var(--osso-suave);
+}
+
+.horarios p br + * {
+    color: var(--osso);
+}
+
+/* horários organizados em duas colunas */
+.horarios p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--esp-m);
+    padding: 14px 0;
+    border-bottom: 1px solid rgb(239 230 214 / 10%);
+}
+
+.horarios p span:last-child {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.horarios .fechado {
+    color: var(--osso-suave);
+    font-style: italic;
+}
+
 
 /* Desliza o fundo um azulejo inteiro para baixo */
 @keyframes girar {
-    from { background-position: 0 0; }
-    to   { background-position: 0 101.82px; }
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 101.82px;
+    }
 }
 
 /* Para quem desativa animações no sistema, o poste fica parado */
@@ -116,15 +241,54 @@
     .vidro {
         animation: none;
     }
+
+    .abertura .btn {
+        transition: none;
+    }
 }
 
 /* Em telas estreitas, tudo empilhado e sem o poste */
 @media (max-width: 700px) {
-    .colunas {
-        flex-direction: column;
+    .abertura {
+        min-height: auto;
+        padding: 35px 0 42px;
+    }
+
+    .abertura h1 {
+        font-size: clamp(2.25rem, 9vw, 3.2rem);
+        letter-spacing: -0.8px;
+    }
+
+    .abertura p {
+        font-size: 1rem;
     }
 
     .poste {
         display: none;
+    }
+
+    .colunas {
+        flex-direction: column;
+        gap: 38px;
+        padding-top: 30px;
+    }
+
+    .servicos,
+    .horarios {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .precos li {
+        gap: 6px;
+    }
+
+    .precos small {
+        font-size: 0.8rem;
+    }
+
+    .preco {
+        font-size: 1.05rem;
     }
 }
