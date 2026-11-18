@@ -29,7 +29,7 @@
 /* A tampa de cima é mais alta e arredondada, como uma cúpula */
 .tampa.topo {
     height: 34px;
-    border-radius: 46px 46px 6px 6px;
+    border-radius: 46px 46px 0px 6px;
 }
 
 /* Vidro listrado, com as listras girando */

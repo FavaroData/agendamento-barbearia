@@ -1,4 +1,4 @@
-async function carregarDatas() {
+ async function carregarDatas() {
     // variavel de leitura do json e atribuição a ele na const "datas"
     const datasJson = await fetch("dados/datas.json");
     const datas = await datasJson.json();
