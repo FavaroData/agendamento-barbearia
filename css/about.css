@@ -1,0 +1,66 @@
+
+/* Estilos exclusivos da página sobre o trabalho */
+
+/* Área principal: conteúdo centralizado e confortável para leitura */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px var(--esp-g) 60px;
+}
+
+/* Seções de conteúdo */
+main section {
+    padding: 30px 0;
+}
+
+/* Título principal */
+main h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: var(--osso);
+    margin-bottom: 28px;
+}
+
+/* Parágrafos */
+main p {
+    color: var(--osso-suave);
+    font-family: var(--fonte-texto);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin: 0 0 20px;
+}
+
+/* Separação visual entre apresentação e autores */
+main section + section {
+    padding-top: 30px;
+    border-top: 1px solid var(--couro-claro);
+}
+
+/* responsividade */
+@media (max-width: 600px) {
+    main {
+        padding: 25px 20px 40px;
+    }
+
+    main section {
+        padding: 20px 0;
+    }
+
+    main h1 {
+        font-size: 2.3rem;
+    }
+
+    main h2 {
+        font-size: 1.5rem;
+    }
+
+    main p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    main section:last-child p {
+        padding: 16px;
+    }
+}
