@@ -1,0 +1,60 @@
+<?php
+include "conexao.php";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $telefone = $_POST["telefone"];
+    $senha = $_POST["senha"];
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+    $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, telefone, senha_hash) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssss", $nome, $email, $telefone, $senhaHash);
+    $stmt->execute();
+    header("location: login.php");
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <header id="menu"></header>
+    <script src="script/menu.js"></script>
+
+    <main>
+        <h1>Criar conta</h1>
+        <form method="POST" class="agendamento">
+            <p><label for="cadastroNome">Nome Completo</label></p>
+            <input type="text" name="nome" id="cadastroNome" class="input"
+                placeholder="Antonio Junior" autocomplete="name"
+                minlength="3" required>
+
+            <p><label for="cadastroTelefone">Telefone</label></p>
+            <input type="tel" name="telefone" id="cadastroTelefone" class="input"
+                placeholder="41999999999" autocomplete="tel"
+                pattern="\d{11}" maxlength="11"
+                title="Digite 11 números: DDD + celular" required>
+
+            <p><label for="cadastroEmail">Email</label></p>
+            <input type="email" name="email" id="cadastroEmail" class="input"
+                placeholder="seuemail@email.com" autocomplete="email" required>
+
+            <p><label for="cadastroSenha">Senha</label></p>
+            <input type="password" name="senha" id="cadastroSenha" class="input"
+                autocomplete="new-password" minlength="6"
+                title="Mínimo de 6 caracteres" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+</body>
+
+</html>
