@@ -282,3 +282,13 @@ main {
         display: none;
     }
 }
+
+/* Links de texto com a cor da marca */
+main a:not(.btn) {
+    color: var(--latao);
+};
+
+/* Mensagem de erro dos formulários */
+.erro {
+    color: #e88a8a;
+}

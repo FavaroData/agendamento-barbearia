@@ -37,23 +37,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script src="script/menu.js"></script>
 
     <main>
-        <h1>Entrar</h1>
+        <div class=" agendamento">
+            <h1>Entrar</h1>
 
-        <?php if (isset($erro)) echo "<p>$erro</p>"; ?>
+            <?php if (isset($erro)) echo "<p>$erro</p>"; ?>
 
-        <form method="POST" class="agendamento">
-            <p><label for="loginEmail">Email</label></p>
-            <input type="email" name="email" id="loginEmail" class="input"
-                placeholder="seuemail@email.com" autocomplete="email" required>
+            <form method="POST" class="agendamento">
+                <p><label for="loginEmail">Email</label></p>
+                <input type="email" name="email" id="loginEmail" class="input"
+                    placeholder="seuemail@email.com" autocomplete="email" required>
 
-            <p><label for="loginSenha">Senha</label></p>
-            <input type="password" name="senha" id="loginSenha" class="input"
-                autocomplete="current-password" required>
+                <p><label for="loginSenha">Senha</label></p>
+                <input type="password" name="senha" id="loginSenha" class="input"
+                    autocomplete="current-password" required>
 
-            <button type="submit">Entrar</button>
-        </form>
+                <button type="submit">Entrar</button>
+            </form>
 
-        <p>Não tem conta? <a href="cadastro.php">Criar conta</a></p>
+            <p>Não tem conta? <a href="cadastro.php">Criar conta</a></p>
     </main>
 </body>
 
