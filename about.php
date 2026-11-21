@@ -20,7 +20,7 @@
         <section>
             <h1>Sobre o trabalho</h1>
             <p>Este site foi desenvolvido como avaliação somativa da disciplina de Desenvolvimento Web, do curso de Análise e Desenvolvimento de Sistemas da PUC-PR.</p>
-            <p>A proposta é simular o agendamento de horários de uma barbearia: o cliente escolhe o serviço, o barbeiro, o dia e o horário, e recebe um comprovante ao final. Todo o site foi construído apenas com HTML, CSS e JavaScript, sem frameworks ou bibliotecas, e funciona inteiramente no navegador.</p>
+            <p>Todo o site foi construído com HTML, CSS e JavaScript no front-end, e PHP com banco de dados MySQL no back-end, sem frameworks ou bibliotecas. O cliente cria uma conta, faz login e gerencia seus próprios agendamentos.</p>
         </section>
 
         <!-- Autores -->
