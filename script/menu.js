@@ -9,9 +9,10 @@ document.getElementById("menu").innerHTML = `
 
         <ul class="menu-links">
             <li><a href="index.html">Menu principal</a></li>
-            <li><a href="form.html">Agendar</a></li>
-            <li><a href="about.html">Sobre</a></li>
-            <li><a href="formAction.html">Agendamentos</a></li>
+            <li><a href="form.php">Agendar</a></li>
+            <li><a href="about.php">Sobre</a></li>
+            <li><a href="formAction.php">Agendamentos</a></li>
+            <li><a href="logout.php">Sair</a></li>
         </ul>
     </nav>
     <div class="listra" aria-hidden="true"></div>

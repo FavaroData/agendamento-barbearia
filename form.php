@@ -29,7 +29,7 @@
                 tranquila na Barbearia Antônios.
             </p>
 
-            <form id="agendamentoForm" action="formAction.html" method="GET">
+            <form id="agendamentoForm" action="formAction.php" method="GET">
                 <p>
                     <label for="agendamentoNome">Nome Completo</label>
                 </p>

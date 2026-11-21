@@ -1,3 +1,4 @@
+<?php include "verifica_login.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -77,7 +78,7 @@
                 Imprimir comprovante
             </button>
 
-            <a href="form.html" class="btn">
+            <a href="form.php" class="btn">
                 Novo agendamento
             </a>
         </nav>

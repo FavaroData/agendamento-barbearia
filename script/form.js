@@ -153,7 +153,7 @@ form.addEventListener("submit", (event) => {
     dados.append("observacoes", document.getElementById("agendamentoObservacoes").value);
 
     // envia os dados e redireciona a página
-    window.location.href = "formAction.html?" + dados.toString();
+    window.location.href = "formAction.php?" + dados.toString();
 });
 
 // funções para retornar erro ou pass na validação
