@@ -6,13 +6,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
     $telefone = $_POST["telefone"];
     $senha = $_POST["senha"];
-    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, telefone, senha_hash) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $nome, $email, $telefone, $senhaHash);
+    // verifica se o email já foi cadastrado
+    $stmt = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
+    $stmt->bind_param("s", $email);
     $stmt->execute();
-    header("location: login.php");
-    exit;
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $erro = "Este e-mail já está cadastrado.";
+    } else {
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, telefone, senha_hash) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $nome, $email, $telefone, $senhaHash);
+        $stmt->execute();
+        header("location: login.php");
+        exit;
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -32,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <main>
         <h1>Criar conta</h1>
+        <?php if (isset($erro)) echo "<p>$erro</p>"; ?>
         <form method="POST" class="agendamento">
             <p><label for="cadastroNome">Nome Completo</label></p>
             <input type="text" name="nome" id="cadastroNome" class="input"
