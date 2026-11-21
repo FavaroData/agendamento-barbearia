@@ -286,9 +286,27 @@ main {
 /* Links de texto com a cor da marca */
 main a:not(.btn) {
     color: var(--latao);
-};
+}
 
 /* Mensagem de erro dos formulários */
 .erro {
     color: #e88a8a;
+}
+
+/* Rodapé */
+#rodape {
+    margin-top: var(--esp-g);
+}
+
+.rodape-conteudo {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--esp-m) var(--esp-g);
+    color: var(--osso-suave);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.rodape-conteudo p {
+    margin: 4px 0;
 }

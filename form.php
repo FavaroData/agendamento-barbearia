@@ -108,5 +108,7 @@
             </form>
         </div>
     </main>
+    <footer id="rodape"></footer>
+    <script src="script/rodape.js"></script>
 </body>
 </html>

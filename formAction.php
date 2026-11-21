@@ -85,6 +85,8 @@
     </main>
 
     <script src="script/formActionGET.js" defer></script>
+    <footer id="rodape"></footer>
+    <script src="script/rodape.js"></script>
 </body>
 
 </html>

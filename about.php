@@ -29,6 +29,8 @@
             <p>Lucas Antônio Favaro e Sérgio Antônio Kociolek.</p>
         </section>
     </main>
+    <footer id="rodape"></footer>
+    <script src="script/rodape.js"></script>
 </body>
 
 </html>

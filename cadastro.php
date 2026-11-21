@@ -41,31 +41,39 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script src="script/menu.js"></script>
 
     <main>
-        <h1>Criar conta</h1>
-        <?php if (isset($erro)) echo "<p>$erro</p>"; ?>
-        <form method="POST" class="agendamento">
-            <p><label for="cadastroNome">Nome Completo</label></p>
-            <input type="text" name="nome" id="cadastroNome" class="input"
-                placeholder="Antonio Junior" autocomplete="name"
-                minlength="3" required>
+        <div class="agendamento">
+            <h1>Criar conta</h1>
 
-            <p><label for="cadastroTelefone">Telefone</label></p>
-            <input type="tel" name="telefone" id="cadastroTelefone" class="input"
-                placeholder="41999999999" autocomplete="tel"
-                pattern="\d{11}" maxlength="11"
-                title="Digite 11 números: DDD + celular" required>
+            <?php if (isset($erro)) echo "<p class=\"erro\">$erro</p>"; ?>
 
-            <p><label for="cadastroEmail">Email</label></p>
-            <input type="email" name="email" id="cadastroEmail" class="input"
-                placeholder="seuemail@email.com" autocomplete="email" required>
+            <form method="POST">
+                <p><label for="cadastroNome">Nome Completo</label></p>
+                <input type="text" name="nome" id="cadastroNome" class="input"
+                    placeholder="Antonio Junior" autocomplete="name"
+                    minlength="3" required>
 
-            <p><label for="cadastroSenha">Senha</label></p>
-            <input type="password" name="senha" id="cadastroSenha" class="input"
-                autocomplete="new-password" minlength="6"
-                title="Mínimo de 6 caracteres" required>
-            <button type="submit">Cadastrar</button>
-        </form>
+                <p><label for="cadastroTelefone">Telefone</label></p>
+                <input type="tel" name="telefone" id="cadastroTelefone" class="input"
+                    placeholder="41999999999" autocomplete="tel"
+                    pattern="\d{11}" maxlength="11"
+                    title="Digite 11 números: DDD + celular" required>
+
+                <p><label for="cadastroEmail">Email</label></p>
+                <input type="email" name="email" id="cadastroEmail" class="input"
+                    placeholder="seuemail@email.com" autocomplete="email" required>
+
+                <p><label for="cadastroSenha">Senha</label></p>
+                <input type="password" name="senha" id="cadastroSenha" class="input"
+                    autocomplete="new-password" minlength="6"
+                    title="Mínimo de 6 caracteres" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+
+            <p>Já tem conta? <a href="login.php">Entrar</a></p>
+        </div>
     </main>
+    <footer id="rodape"></footer>
+    <script src="script/rodape.js"></script>
 </body>
 
 </html>

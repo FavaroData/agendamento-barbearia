@@ -166,3 +166,11 @@
         display: none;
     }
 }
+
+@media print {
+    #menu,
+    #rodape,
+    .acoes {
+        display: none;
+    }
+}

@@ -37,12 +37,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script src="script/menu.js"></script>
 
     <main>
-        <div class=" agendamento">
+        <div class="agendamento">
             <h1>Entrar</h1>
 
-            <?php if (isset($erro)) echo "<p>$erro</p>"; ?>
+            <?php if (isset($erro)) echo "<p class=\"erro\">$erro</p>"; ?>
 
-            <form method="POST" class="agendamento">
+            <form method="POST">
                 <p><label for="loginEmail">Email</label></p>
                 <input type="email" name="email" id="loginEmail" class="input"
                     placeholder="seuemail@email.com" autocomplete="email" required>
@@ -55,7 +55,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </form>
 
             <p>Não tem conta? <a href="cadastro.php">Criar conta</a></p>
+        </div>
     </main>
+    <footer id="rodape"></footer>
+    <script src="script/rodape.js"></script>
 </body>
 
 </html>
