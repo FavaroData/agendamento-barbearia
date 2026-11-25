@@ -282,3 +282,77 @@ main {
         display: none;
     }
 }
+
+/* Links de texto com a cor da marca */
+main a:not(.btn) {
+    color: var(--latao);
+}
+
+/* Mensagem de erro dos formulários */
+.erro {
+    color: #e88a8a;
+}
+
+/* Rodapé */
+#rodape {
+    margin-top: var(--esp-g);
+}
+
+.rodape-conteudo {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--esp-m) var(--esp-g);
+    color: var(--osso-suave);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.rodape-conteudo p {
+    margin: 4px 0;
+}
+
+/* Tabela de agendamentos */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--esp-g);
+}
+
+.tabela th,
+.tabela td {
+    text-align: left;
+    padding: 10px var(--esp-p);
+    border-bottom: 1px solid var(--couro-claro);
+}
+
+.tabela th {
+    font-family: var(--fonte-titulo);
+    color: var(--latao);
+}
+
+/* Links de ação lado a lado */
+.tabela-acoes {
+    display: flex;
+    gap: var(--esp-m);
+    align-items: center;
+}
+
+.tabela-acoes form {
+    margin: 0;
+}
+
+/* Botão de cancelar com cara de link */
+.link-cancelar {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #e88a8a;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Mensagem de sucesso */
+.sucesso {
+    color: var(--verde);
+}
