@@ -54,7 +54,6 @@ async function carregarBarbeiros() {
 }
 
 // execucao das async
-carregarBarbeiros();
 carregarDatas();
 carregarHorarios();
 // evento pra atualizar os horarios disponiveis de acordo com a data selecionada

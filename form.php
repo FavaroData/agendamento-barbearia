@@ -1,7 +1,13 @@
-<?php include "verifica_login.php"; ?>
+<?php
+include "verifica_login.php";
+include "conexao.php";
 
+$servicos = $conn->query("SELECT id, nome, preco FROM servicos");
+$barbeiros = $conn->query("SELECT b.idBarbeiro, u.nome FROM barbeiro b JOIN usuario u ON u.idUsuario = b.idUsuario");
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,14 +66,10 @@
 
                 <p>Serviço Desejado</p>
 
-                <input type="radio" name="servico" id="agendamentoServicoCabelo" value="Corte de Cabelo" required>
-                <label for="agendamentoServicoCabelo">Corte de Cabelo</label>
-
-                <input type="radio" name="servico" id="agendamentoServicoBarba" value="Barba">
-                <label for="agendamentoServicoBarba">Barba</label>
-
-                <input type="radio" name="servico" id="agendamentoServicoCabeloBarba" value="Cabelo e Barba">
-                <label for="agendamentoServicoCabeloBarba">Cabelo e Barba</label>
+                <?php while ($s = $servicos->fetch_assoc()) { ?>
+                    <input type="radio" name="servico" id="servico<?= $s["id"] ?>" value="<?= $s["id"] ?>" required>
+                    <label for="servico<?= $s["id"] ?>"><?= $s["nome"] ?> (R$ <?= number_format($s["preco"], 2, ",", ".") ?>)</label>
+                <?php } ?>
 
                 <span class="span-required"> </span> <!-- Span para evitar o erro no for de leitura das classes span no form.js-->
                 <span class="span-required-null">Campo vazio, selecione uma opção!</span>
@@ -75,10 +77,13 @@
                 <p>
                     <label for="agendamentoBarbeiro">Barbeiro</label>
                 </p>
-                <select name="barbeiroNome" id="agendamentoBarbeiro" class="input required" required>
+                <select name="barbeiro" id="agendamentoBarbeiro" class="input required" required>
                     <option value="">Escolha seu barbeiro</option>
+                    <?php while ($b = $barbeiros->fetch_assoc()) { ?>
+                        <option value="<?= $b["idBarbeiro"] ?>"><?= $b["nome"] ?></option>
+                    <?php } ?>
                 </select>
-                <span class="span-required"> </span> <!-- Span para evitar o erro no for de leitura das classes span no form.js-->
+                <span class="span-required"> </span> 
                 <span class="span-required-null">Campo vazio, escolha um barbeiro!</span>
 
                 <p>
@@ -101,7 +106,7 @@
                 <select name="horario" id="agendamentoHorario" class="input required" required>
                     <option value="">Selecione um horário</option>
                 </select>
-                <span class="span-required"> </span> <!-- Span para evitar o erro no for de leitura das classes span no form.js-->
+                <span class="span-required"> </span>
                 <span class="span-required-null">Campo vazio, preencha com um horário para agendamento!</span>
 
                 <button type="submit">Agendar horário</button>
@@ -111,4 +116,5 @@
     <footer id="rodape"></footer>
     <script src="script/rodape.js"></script>
 </body>
+
 </html>
