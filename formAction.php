@@ -71,6 +71,7 @@ $ag = $stmt->get_result()->fetch_assoc();
             <button type="button" class="btn" onclick="window.print()">Imprimir comprovante</button>
             <?php } ?>
 
+            <a href="agendamentos.php" class="btn">Meus agendamentos</a>
             <a href="form.php" class="btn">
                 Novo agendamento
             </a>

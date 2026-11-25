@@ -11,7 +11,7 @@ document.getElementById("menu").innerHTML = `
             <li><a href="index.html">Menu principal</a></li>
             <li><a href="form.php">Agendar</a></li>
             <li><a href="about.php">Sobre</a></li>
-            <li><a href="formAction.php">Agendamentos</a></li>
+            <li><a href="agendamentos.php">Agendamentos</a></li>
             <li><a href="logout.php">Sair</a></li>
         </ul>
     </nav>
