@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $senha = $_POST["senha"];
 
     // verifica se o email já foi cadastrado
-    $stmt = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
+    $stmt = $conn->prepare("SELECT idUsuario FROM usuario WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $erro = "Este e-mail já está cadastrado.";
     } else {
         $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
-        $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, telefone, senha_hash) VALUES (?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO usuario (nome, email, telefone, senha) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $nome, $email, $telefone, $senhaHash);
         $stmt->execute();
         header("location: login.php");

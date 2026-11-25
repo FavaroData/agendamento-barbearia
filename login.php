@@ -6,13 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    $stmt = $conn->prepare("SELECT id, nome, senha_hash FROM usuarios WHERE email = ?");
+    $stmt = $conn->prepare("SELECT idUsuario, nome, senha FROM usuario WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $usuario = $stmt->get_result()->fetch_assoc();
-    if ($usuario && password_verify($senha, $usuario["senha_hash"])) {
+    if ($usuario && password_verify($senha, $usuario["senha"])) {
         session_regenerate_id(true);
-        $_SESSION["usuario_id"] = $usuario["id"];
+        $_SESSION["usuario_id"] = $usuario["idUsuario"];
         $_SESSION["usuario_nome"] = $usuario["nome"];
         header("location: index.html");
         exit;
