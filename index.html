@@ -37,50 +37,52 @@
                 <div class="tampa"></div>
             </div>
         </section>
-        <!-- Serviços e horários, lado a lado -->
         <div class="colunas">
-            <!-- Serviços e preços -->
-            <section class="servicos">
-                <h2>Serviços</h2>
+            <section class="servicos" aria-labelledby="titulo-servicos">
+                <h2 id="titulo-servicos">Serviços</h2>
+
                 <ul class="precos">
                     <li>
                         <span>Corte de cabelo<small>Tesoura ou máquina, acabamento na navalha</small></span>
-                        <span class="pontilhado"></span>
                         <span class="preco">R$ 40</span>
                     </li>
                     <li>
                         <span>Barba<small>Toalha quente e modelagem</small></span>
-                        <span class="pontilhado"></span>
                         <span class="preco">R$ 30</span>
                     </li>
                     <li>
                         <span>Cabelo e barba<small>Os dois serviços juntos</small></span>
-                        <span class="pontilhado"></span>
                         <span class="preco">R$ 60</span>
+                    </li>
+                    <li>
+                        <span>Sobrancelha<small>Ajuste do contorno das sobrancelhas</small></span>
+                        <span class="preco">R$ 15</span>
+                    </li>
+                    <li>
+                        <span>Corte infantil<small>Corte de cabelo para crianças</small></span>
+                        <span class="preco">R$ 30</span>
                     </li>
                 </ul>
             </section>
 
-            <!-- Horários de funcionamento -->
             <section class="horarios" aria-labelledby="titulo-horarios">
                 <h2 id="titulo-horarios">Horários</h2>
 
-                <p>
-                    <span>Terça a sexta</span>
-                    <span>9h às 19h</span>
-                </p>
-
-                <p>
-                    <span>Sábado</span>
-                    <span>8h às 14h</span>
-                </p>
-
-                <p>
-                    <span>Domingo e segunda</span>
-                    <span class="fechado">Fechado</span>
-                </p>
+                <dl class="lista-horarios">
+                    <div>
+                        <dt>Terça a sexta</dt>
+                        <dd>9h às 19h</dd>
+                    </div>
+                    <div>
+                        <dt>Sábado</dt>
+                        <dd>8h às 14h</dd>
+                    </div>
+                    <div>
+                        <dt>Domingo e segunda</dt>
+                        <dd class="fechado">Fechado</dd>
+                    </div>
+                </dl>
             </section>
-
         </div>
     </main>
     <footer id="rodape"></footer>
