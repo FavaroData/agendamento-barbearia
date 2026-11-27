@@ -1,6 +1,6 @@
 <?php
 // UPDATE: salva as alterações de um agendamento do usuário logado
-include "verifica_login.php";
+include __DIR__ . "/login/verifica_login.php";
 include "conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {

@@ -1,5 +1,5 @@
 <?php
-include "conexao.php";
+include __DIR__ . "/../conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST["nome"];
@@ -32,13 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar conta</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/form.css">
 </head>
 
 <body>
     <header id="menu"></header>
-    <script src="script/menu.js"></script>
+    <script src="../script/menu.js?v=3"></script>
 
     <main>
         <div class="agendamento">
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
     </main>
     <footer id="rodape"></footer>
-    <script src="script/rodape.js"></script>
+    <script src="../script/rodape.js"></script>
 </body>
 
 </html>

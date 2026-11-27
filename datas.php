@@ -1,6 +1,6 @@
 <?php
 // Devolve, em JSON, as datas em que o barbeiro escolhido atende
-include "verifica_login.php";
+include __DIR__ . "/login/verifica_login.php";
 include "conexao.php";
 
 $idBarbeiro = isset($_GET["barbeiro"]) ? $_GET["barbeiro"] : 0;
