@@ -98,132 +98,70 @@
 
 /* $$$$ Serviços e horários $$$$ */
 
-/* As duas seções lado a lado */
 .colunas {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: start;
     gap: clamp(28px, 5vw, 64px);
     border-top: 1px solid var(--couro-claro);
     padding-top: 38px;
 }
 
-/* Os serviços ocupam mais espaço que os horários */
-.servicos {
-    flex: 3;
-    min-width: 0;
-}
-
-.horarios {
-    flex: 2;
-    min-width: 0;
-}
-
-/* Títulos das seções */
 .servicos h2,
 .horarios h2 {
     font-size: 1.65rem;
-    margin-bottom: 24px;
+    margin-bottom: var(--esp-m);
 }
 
-/* Tabela de preços, no estilo das placas de barbearia */
-.precos {
-    list-style-type: none;
-    padding: 0;
+.precos,
+.lista-horarios {
     margin: 0;
+    padding: 0;
 }
 
-/* Cada serviço: nome, pontilhado e preço na mesma linha */
-.precos li {
-    display: flex;
+.precos {
+    list-style: none;
+}
+
+.precos li,
+.lista-horarios > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: baseline;
-    gap: var(--esp-p);
-    padding: 18px 0;
-    border-bottom: 1px solid rgb(239 230 214 / 10%);
+    gap: var(--esp-m);
+    padding: 12px 0;
 }
 
-.precos li:first-child {
-    padding-top: 0;
+.precos li + li,
+.lista-horarios > div + div {
+    border-top: 1px solid rgb(239 230 214 / 10%);
 }
 
-/* Ocupa todo o espaço entre o nome e o preço */
-.pontilhado {
-    flex: 1;
-    min-width: 12px;
-    border-bottom: 2px dotted var(--osso-suave);
-    position: relative;
-    top: 27px;
-}
-
-/* O preço em destaque */
 .preco {
-    flex-shrink: 0;
-    font-family: var(--fonte-titulo);
     color: var(--latao);
+    font-family: var(--fonte-titulo);
     font-size: 1.15rem;
-    position: relative;
-    top: 27px;
+    white-space: nowrap;
 }
 
-/* A descrição embaixo do nome do serviço */
 .precos small {
     display: block;
+    margin-top: 4px;
     color: var(--osso-suave);
     font-size: 0.85rem;
     line-height: 1.5;
-    margin-top: 5px;
 }
 
-/* Horários com separação visual */
-.horarios p {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+.lista-horarios dd {
     margin: 0;
-    padding: 14px 0;
-    border-bottom: 1px solid rgb(239 230 214 / 10%);
-}
-
-.horarios p:first-of-type {
-    padding-top: 0;
-}
-
-.horarios p:last-child {
-    border-bottom: none;
-}
-
-.horarios p br {
-    display: none;
-}
-
-.horarios p {
-    color: var(--osso-suave);
-}
-
-.horarios p br + * {
-    color: var(--osso);
-}
-
-/* horários organizados em duas colunas */
-.horarios p {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: var(--esp-m);
-    padding: 14px 0;
-    border-bottom: 1px solid rgb(239 230 214 / 10%);
-}
-
-.horarios p span:last-child {
     text-align: right;
     white-space: nowrap;
 }
 
-.horarios .fechado {
+.lista-horarios .fechado {
     color: var(--osso-suave);
     font-style: italic;
 }
-
 
 /* Desliza o fundo um azulejo inteiro para baixo */
 @keyframes girar {
@@ -268,14 +206,9 @@
     }
 
     .colunas {
-        flex-direction: column;
-        gap: 38px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--esp-g);
         padding-top: 30px;
-    }
-
-    .servicos,
-    .horarios {
-        width: 100%;
     }
 }
 
