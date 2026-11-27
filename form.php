@@ -44,8 +44,10 @@ $barbeiros = $conn->query("SELECT b.idBarbeiro, u.nome FROM barbeiro b JOIN usua
                 <p>Serviço Desejado</p>
 
                 <?php while ($s = $servicos->fetch_assoc()) { ?>
-                    <input type="radio" name="servico" id="servico<?= $s["id"] ?>" value="<?= $s["id"] ?>" required>
-                    <label for="servico<?= $s["id"] ?>"><?= $s["nome"] ?> (R$ <?= number_format($s["preco"], 2, ",", ".") ?>)</label>
+                    <div class="opcao-servico">
+                        <input type="radio" name="servico" id="servico<?= $s["id"] ?>" value="<?= $s["id"] ?>" required>
+                        <label for="servico<?= $s["id"] ?>"><?= $s["nome"] ?> (R$ <?= number_format($s["preco"], 2, ",", ".") ?>)</label>
+                    </div>
                 <?php } ?>
 
                 <p>

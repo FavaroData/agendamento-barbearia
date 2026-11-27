@@ -93,6 +93,22 @@
     cursor: pointer;
 }
 
+/* Mantém cada controle de serviço junto do seu rótulo. */
+.agendamento .opcao-servico {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-p);
+}
+
+.agendamento .opcao-servico input[type="radio"] {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.agendamento .opcao-servico input[type="radio"] + label {
+    margin: 0;
+}
+
 /* Realce discreto ao passar o mouse nas opções */
 .agendamento input[type="radio"] + label:hover {
     color: var(--latao);
