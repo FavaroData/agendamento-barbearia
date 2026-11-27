@@ -1,6 +1,6 @@
 <?php
 // INSERT: grava um novo agendamento para o usuário logado
-include "verifica_login.php";
+include __DIR__ . "/login/verifica_login.php";
 include "conexao.php";
 
 // Só aceita envio pelo formulário

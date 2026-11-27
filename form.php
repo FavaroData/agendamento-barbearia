@@ -1,5 +1,5 @@
 <?php
-include "verifica_login.php";
+include __DIR__ . "/login/verifica_login.php";
 include "conexao.php";
 
 $servicos = $conn->query("SELECT id, nome, preco FROM servicos");
@@ -16,7 +16,7 @@ $barbeiros = $conn->query("SELECT b.idBarbeiro, u.nome FROM barbeiro b JOIN usua
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/form.css">
 
-    <script src="script/menu.js" defer></script>
+    <script src="script/menu.js?v=3" defer></script>
     <script src="script/form.js" defer></script>
 
     <title>Agendamento | Barbearia Antônios</title>

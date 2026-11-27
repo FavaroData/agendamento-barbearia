@@ -1,4 +1,3 @@
-<?php include "verifica_login.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -12,7 +11,7 @@
 
 <body>
     <header id="menu">
-        <script src="script/menu.js"></script>
+        <script src="script/menu.js?v=3"></script>
     </header>
 
     <main>

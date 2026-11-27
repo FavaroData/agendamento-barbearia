@@ -1,6 +1,6 @@
 <?php
 // Formulário de edição, já preenchido com os dados do agendamento
-include "verifica_login.php";
+include __DIR__ . "/login/verifica_login.php";
 include "conexao.php";
 
 $idAgendamento = isset($_GET["id"]) ? $_GET["id"] : 0;
@@ -36,7 +36,7 @@ $barbeiros = $conn->query("SELECT b.idBarbeiro, u.nome FROM barbeiro b JOIN usua
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/form.css">
-    <script src="script/menu.js" defer></script>
+    <script src="script/menu.js?v=3" defer></script>
     <script src="script/form.js" defer></script>
     <title>Editar agendamento | Barbearia Antônios</title>
 </head>

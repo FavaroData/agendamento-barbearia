@@ -1,6 +1,6 @@
 <?php
 // Devolve, em JSON, os horários livres de um dia da agenda
-include "verifica_login.php";
+include __DIR__ . "/login/verifica_login.php";
 include "conexao.php";
 
 $idAgenda = isset($_GET["agenda"]) ? $_GET["agenda"] : 0;

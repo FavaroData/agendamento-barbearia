@@ -1,6 +1,6 @@
 <?php
 // SELECT: lista os agendamentos do usuário logado
-include "verifica_login.php";
+include __DIR__ . "/login/verifica_login.php";
 include "conexao.php";
 
 $idUsuario = $_SESSION["usuario_id"];
@@ -36,7 +36,7 @@ $msg = isset($_GET["msg"]) && isset($mensagens[$_GET["msg"]]) ? $_GET["msg"] : "
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/form.css">
-    <script src="script/menu.js" defer></script>
+    <script src="script/menu.js?v=3" defer></script>
     <title>Meus agendamentos | Barbearia Antônios</title>
 </head>
 

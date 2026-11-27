@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "conexao.php";
+include __DIR__ . "/../conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         session_regenerate_id(true);
         $_SESSION["usuario_id"] = $usuario["idUsuario"];
         $_SESSION["usuario_nome"] = $usuario["nome"];
-        header("location: index.html");
+        header("location: ../index.html");
         exit;
     } else {
         $erro = "E-mail ou senha inválidos.";
@@ -28,13 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/form.css">
 </head>
 
 <body>
     <header id="menu"></header>
-    <script src="script/menu.js"></script>
+    <script src="../script/menu.js?v=3"></script>
 
     <main>
         <div class="agendamento">
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
     </main>
     <footer id="rodape"></footer>
-    <script src="script/rodape.js"></script>
+    <script src="../script/rodape.js"></script>
 </body>
 
 </html>

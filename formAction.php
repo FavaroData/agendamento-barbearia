@@ -1,5 +1,5 @@
 <?php
-include "verifica_login.php";
+include __DIR__ . "/login/verifica_login.php";
 include "conexao.php";
 
 // SELECT: busca o agendamento pelo id, só se for do usuário logado
@@ -41,7 +41,7 @@ $ag = $stmt->get_result()->fetch_assoc();
 <body>
     <!-- script de menu ficando dentro do header dá possibilidade dele ser tratado no css depois, depois só tem que jogar pras outras páginas -->
     <header id="menu">
-        <script src="script/menu.js" defer></script>
+        <script src="script/menu.js?v=3" defer></script>
     </header>
 
     <main id="conteudo-principal">

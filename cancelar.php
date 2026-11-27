@@ -1,6 +1,6 @@
 <?php
 // DELETE: cancela um agendamento do usuário logado e libera o horário
-include "verifica_login.php";
+include __DIR__ . "/login/verifica_login.php";
 include "conexao.php";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
